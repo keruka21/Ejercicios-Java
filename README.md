@@ -315,6 +315,7 @@ Se le pedirá una palabra al usuario y se visualizará por pantalla cuántas let
 >El tamaño de la palabra es pequeño.
 
 4.- Repetir palabra.
+
 Se le pedirá al usuario una palabra y un número. Se mostrará por pantalla dicha palabra en mayúsculas y el número de veces que haya indicado el usuario. Ejemplo:
 
 >Inserta la palabra que quieras repetir: Hola
