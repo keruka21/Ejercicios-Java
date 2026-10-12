@@ -9,20 +9,20 @@ Crea el siguiente programa:
 - ¿Cuál es tu nombre?
 - Leire
 - Bienvenida Leire. Vamos a realizar diferentes cálculos.
-- ***************************************
+  
 - CÍRCULO
 - Introduce el valor del radio: 6
 - El área del círculo es 113.1 m2.
-- ***************************************
+ 
 - CUADRADO
 - Introduce el valor del lado: 4
 - El área del cuadrado es 16 m2.
-- ***************************************
+
 - RECTÁNGULO
 - Introduce el valor del lado más largo: 4
 - Introduce el valor del lado más corto: 7
 - El área del rectángulo es 28 m2.
--***************************************
+
 - TRIÁNGULO
 - Introduce el valor de la altura: 8
 - Introduce el valor de la base: 10
@@ -82,6 +82,8 @@ El programa debe pedir la edad de una persona y mostrar:
 - "No puedes entrar" si tiene menos de 18. 
 - Si tiene exactamente 18, mostrar "Justo de edad".
 
+***************************************
+
 ### Documento Word - Ejercicio 2: Nota del examen.
 Pide al usuario una nota entre 0 y 10.
 El programa debe mostrar:
@@ -90,11 +92,15 @@ El programa debe mostrar:
 - "Notable" si está entre 7 y 8,9. 
 - "Sobresaliente" si es 9 o más. 
 
+***************************************
+
 ### Documento Word - Ejercicio 3: Descuento en una tienda.
 Una tienda hace un 10% de descuento si la compra es superior a 50 €.
 El programa debe pedir el importe de la compra y mostrar:
 - Si supera los 50 €, el precio original, el descuento aplicado y el precio final. 
 - Si no supera los 50 €, mostrar que no tiene descuento y el precio final.
+
+***************************************
 
 ### Documento Word Bucles - Ejercicio 1:
 Transforma el siguiente bucle for a un bucle while:
@@ -126,9 +132,13 @@ Escribe un programa utilizando FOR que mostrará por pantalla los 5 primeros num
 Escribe un programa que mostrará por pantalla el numero factorial del número introducido por el usuario por consola. El número introducido debe ser mayor que 0.
 [Enlace a Wikipedia](https://es.wikipedia.org/wiki/Factorial)
 
+***************************************
+
 ### Documento Word Bucles - Ejercicio 5:
 
 Escribe un programa que mostrará por pantalla cuántos dígitos tiene el número introducido por el usuario.
+
+***************************************
 
 ### Ejercicio 44
 
@@ -140,6 +150,8 @@ Realiza la clase Java `Menucase` que muestra un menú y lee por teclado el valor
 4. Opción 4
 5. Opción 5
 6. Salir
+
+***************************************
 
 ### Ejercicio 45
 
@@ -154,29 +166,43 @@ Realiza la clase Java `Menudias` que lee por teclado un carácter y muestra el d
 * **D**: Domingo
 * **Otro Carácter**: ERROR
 
+***************************************
+
 ### Ejercicio 46
 
 Realiza la clase Java `Menumeses` que lee por teclado un `String` con el nombre del mes por pantalla y muestra el número de mes que le corresponde.
+
+***************************************
 
 ### Ejercicio 107
 
 Realiza la clase Java `Num100` que muestra por pantalla los 100 primeros números enteros.
 
+***************************************
+
 ### Ejercicio 108
 
 Realiza la clase Java `Sacanumw` que lee un número entero por teclado y muestra los números desde 1 hasta él inclusive. Con `While`.
+
+***************************************
 
 ### Ejercicio 109
 
 Realiza la clase Java `Sacaparw` que lee un número entero por teclado y muestra los números pares desde 0 hasta él inclusive. Con `While`.
 
+***************************************
+
 ### Ejercicio 110
 
 Realiza la clase Java `Sacanudw` que lee un número entero por teclado y muestra los números desde él inclusive hasta 1. Con `While`.
 
+***************************************
+
 ### Ejercicio 115
 
 Realiza la clase Java `Sumaparw` lee un número entero por teclado y muestra la suma de todos los números pares desde 0 hasta n. Con `While`.
+
+***************************************
 
 ### Ejercicio 117
 
@@ -184,43 +210,63 @@ Realiza la clase Java `Sumapadw` lee un número entero por teclado y muestra la 
 
 ---
 
+***************************************
+
 ## Unidad 03 ________________________________________
 
 ### Ejercicios sencillos de Arrays - Ejercicio 1:
 
 Declara un array llamado `aNombres` de 5 posiciones, inicialízalo con 5 nombres y muéstralos por pantalla.
 
+***************************************
+
 ### Ejercicios sencillos de Arrays - Ejercicio 2:
 
 Declara un array llamado `aNotas` de 8 posiciones (real). Pídele al usuario que introduzca 8 notas, guárdalas en el array y muestra todas al final.
+
+***************************************
 
 ### Ejercicios sencillos de Arrays - Ejercicio 3:
 
 Declara un array llamado `aNotasPGR` de 5 posiciones (int). Pídele al usuario que introduzca 5 notas, guárdalas en el array y muestra la media de todas las notas.
 
+***************************************
+
 ### Ejercicio 5:
 
 Realiza la clase Java `Numveces` que pide números de 0 a 9 por pantalla y calcula el número de veces que han sido introducidos utilizando un array. Finaliza la introducción de datos cuando se introduce un valor negativo o el array está lleno. Al finalizar la introducción de datos muestra por pantalla el número de veces que se ha introducido cada número.
+
+***************************************
 
 ### Ejercicio 6:
 
 Realiza la clase Java `Medianum` que pide números por pantalla y los almacena en un array hasta que se introduzca un número negativo que no será tenido en cuenta o el array esté lleno. Después calcula la Media y la muestra.
 
+***************************************
+
 ### Ejercicio 7:
 
 Realiza la clase Java `Mediatem` que pide temperaturas por pantalla y las almacena en un array hasta que se introduzca la temperatura -999 que no será tenida en cuenta o el array esté lleno. Después calcula la temperatura media y muestra el número de temperaturas que son mayores que la media, iguales que la media, e inferiores a la media.
+
+***************************************
 
 ### Ejercicio 9:
 
 Realiza la clase Java `Contrase` que pide un nombre por pantalla y una contraseña. Compara los valores con unos valores predefinidos y si coinciden muestra un mensaje de bienvenida. Si no coinciden muestra un mensaje de error por pantalla. El proceso se repite hasta que los datos son correctos o hasta que se produzcan más de 3 intentos.
 
+***************************************
+
 ### Ejercicios Métodos Estáticos - Ejercicio 1: Saludo sencillo.
 
 Crea un programa con un método llamado `saludar` que muestre por pantalla el mensaje `¡Hola, bienvenidos a Java!`. Llama al método desde el `main`.
 
+***************************************
+
 ### Ejercicios Métodos Estáticos - Ejercicio 2: Saludo personalizado.
 
 Crea un método llamado `mostrarNombre` que reciba como parámetro un nombre (tipo `String`) y muestre el mensaje `Hola [nombre]!`. El nombre se debe pedir por teclado con `Scanner` desde el `main`.
+
+***************************************
 
 ### Ejercicios Métodos Estáticos - Ejercicio 3: Comprobador de número par.
 
@@ -229,6 +275,8 @@ Crea tres métodos:
 1. `pedirNumero()`: pide un número entero por teclado y lo devuelve.
 2. `esPar(int n)`: devuelve `true` si el número es par, `false` en caso contrario.
 3. En el `main`, usa los otros métodos para indicar si el número introducido es par o impar.
+
+***************************************
 
 ### Ejercicios Métodos Estáticos - Ejercicio 4: Calculadora de operaciones básicas.
 
@@ -240,6 +288,8 @@ Crea los siguientes métodos estáticos:
 * `dividir(int a, int b)`
 
 Desde el `main`, pide dos números por teclado y muestra un menú con las distintas opciones.
+
+***************************************
 
 ### Documento Word: Tienda de Libros.
 
@@ -382,6 +432,8 @@ Se le pedirá al usuario el título del libro. Después de comprobar que existe 
 #### 8. Salir del programa.
 
 Se terminará el programa.
+
+***************************************
 
 ### Documento Word: Librería con Métodos Estáticos.
 
