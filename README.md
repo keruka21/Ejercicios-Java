@@ -211,9 +211,67 @@ Realiza la clase Java `Sumaparw` lee un número entero por teclado y muestra la 
 
 Realiza la clase Java `Sumapadw` lee un número entero por teclado y muestra la suma de todos los números pares desde n hasta 0 (en orden descendente). Con `While`.
 
----
-
 ***************************************
+### Ejercicio Gestionar Notas:
+
+PROGRAMA PARA GESTIONAR NOTAS
+
+Crea el programa “Gestionarnotas”. El programa pedirá usuario y contraseña. Si en la contraseña está la letra “e” mostrará un mensaje de ERROR y pedirá de nuevo el usuario y la contraseña hasta que no exista la letra “e” en la contraseña. (Utiliza indexOf y ten en cuenta las mayúsculas y minúsculas).
+
+>Introduce tu usuario: AntonioR
+>
+>Introduce tu contraseña: 136ae
+>
+>ERROR, en la contraseña no puede aparecer la letra e. Introduce de nuevo, por favor:
+>
+>Introduce tu usuario: AntonioR
+>
+>Introduce tu contraseña: 136aa
+>
+
+Después, aparecerá el siguiente menú:
+1.- Introducir notas. Pedirá los datos del alumno (nombre y apellido). Después, calculará la nota final, utilizando la siguiente fórmula:
+
+- La media de los 3 exámenes parciales es el 55%.
+- La nota obtenida en el último examen es el 30%.
+- La nota obtenida en el último trabajo es el 15%.
+  
+¡Atención! Las notas introducidas no pueden ser negativas, ni mayores de 10.
+Después de introducir todas las notas, deberá aparecer un mensaje como este:
+
+>La nota final del alumno Jon Perez es 5, suficiente.
+
+Hay que tener en cuenta la siguiente tabla:
+- 0-4,9 SUSPENSO
+- 5-5,9 SUFICIENTE
+- 6-6,9 BIEN
+- 7-8,9 NOTABLE
+- 9-10 SOBRESALIENTE
+
+>Introducir la nota del examen 1: 5
+>
+>Introducir la nota del examen 2: 7
+>
+>Introducir la nota del examen 3: -2
+>
+>ERROR! La nota no puede ser negativa.
+>
+>Introducir la nota del examen 3: 2
+>
+>Introducir la nota del último examen: 4
+>
+>Introducir la nota del trabajo: 9
+>
+>La nota final del alumno Jon Perez es 5, suficiente.
+>
+
+2 .- Salir del programa.
+
+Dar las gracias al usuario y finaliza el programa.
+***************************************
+
+Muchas gracias y hasta pronto.
+
 
 ## Unidad 03 ________________________________________
 
