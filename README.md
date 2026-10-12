@@ -277,11 +277,17 @@ Dar las gracias al usuario y finaliza el programa.
 La clase String
 
 Crear la clase MenuString. El programa le pedirá el nombre al usuario y le dará la bienvenida:
+
 >Bienvenido Antonio. ¿Qué quieres hacer?
+
 Después le mostrará este menú:
+
 1.- Dar la vuelta a una palabra.
+
 Se le pedirá una palabra al usuario y se mostrará por pantalla dada la vuelta. Por ejemplo: Si escribo Hola, se mostrará aloH.
+
 2.- Comparar dos palabras.
+
 Se le pedirán dos palabras al usuario y el programa dirá si son iguales o no. Ejemplo:
 
 >Inserta la primera palabra: Hola
@@ -299,6 +305,7 @@ Ejemplo:
 >
 
 3.-Número de letras.
+
 Se le pedirá una palabra al usuario y se visualizará por pantalla cuántas letras tiene. Si el número de letras es 7 o más, mostrara un mensaje indicando que el tamaño de la palabra es grande. Y si es menor de 7, indicará que el tamaño es pequeño. Ejemplo:
 
 >Inserta una palabra: Hola
@@ -306,9 +313,8 @@ Se le pedirá una palabra al usuario y se visualizará por pantalla cuántas let
 >Numero de letras: 4
 >
 >El tamaño de la palabra es pequeño.
->
 
-4.- Repetir palabra
+4.- Repetir palabra.
 Se le pedirá al usuario una palabra y un número. Se mostrará por pantalla dicha palabra en mayúsculas y el número de veces que haya indicado el usuario. Ejemplo:
 
 >Inserta la palabra que quieras repetir: Hola
@@ -317,7 +323,8 @@ Se le pedirá al usuario una palabra y un número. Se mostrará por pantalla dic
 >
 >HOLA HOLA HOLA
 
-5.- Repetir palabra (Mayúscula / Minúscula)
+5.- Repetir palabra (Mayúscula / Minúscula).
+
 Se le pedirá una palabra al usuario. Después, se le preguntará si quiere visualizarla en mayúsculas o minúsculas. Para terminar, se le preguntará cuantas veces quiere repetir dicha palabra. No se puede repetir una palabra 6 veces o más. Si el usuario inserta el número 6 o un número mayor, le pediremos de nuevo el número de repeticiones.
 Ejemplo:
 
@@ -337,7 +344,8 @@ Ejemplo:
 >
 >hola hola
 
-6.- Salir del programa
+6.- Salir del programa.
+
 Le dará las gracias al usuario y se terminará el programa.
 
 >Muchas gracias y hasta pronto.
