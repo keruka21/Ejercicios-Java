@@ -132,6 +132,9 @@ Escribe un programa utilizando FOR que mostrará por pantalla los 5 primeros num
 Escribe un programa que mostrará por pantalla el numero factorial del número introducido por el usuario por consola. El número introducido debe ser mayor que 0.
 [Enlace a Wikipedia](https://es.wikipedia.org/wiki/Factorial)
 
+>El factorial de un número entero positivo (se representa con un signo de exclamación !) es el resultado de multiplicar todos los números enteros desde el 1 hasta ese número. Por ejemplo, el factorial de 5 (se escribe 5!) se calcula así: 5!=5×4×3×2×1=120
+
+
 ***************************************
 
 ### Documento Word Bucles - Ejercicio 5:
