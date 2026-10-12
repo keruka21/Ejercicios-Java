@@ -364,7 +364,6 @@ Se mostrarán todos los títulos y precios de los libros de la tienda de libros.
 
 *Por ejemplo:* El precio del libro Tímidamente de la oscuridad a la luz son 12 euros.
 
-...
 
 ¿Quieres continuar en el programa? SI / NO
 
@@ -375,7 +374,9 @@ Se le pedirá al usuario el título de un libro y se mostrará por pantalla el p
 *Por ejemplo:*
 
 > ¿Cuál es el título del libro? Tímidamente de la oscuridad a la luz
+> 
 > El precio del libro "Tímidamente de la oscuridad a la luz” son 12 euros.
+> 
 > ¿Quieres continuar en el programa? SI / NO
 
 #### 4. Introducir un nuevo libro.
@@ -383,19 +384,25 @@ Se le pedirá al usuario el título de un libro y se mostrará por pantalla el p
 Se le pedirá al usuario el título y el precio del libro y se guardará dentro de los arrays (En la primera posición libre).
 
 > ¿Cuál es el título del libro? Aladin
+> 
 > ¿Cuál es el precio? 19
+> 
 > El libro ha sido guardado.
 
 Primero tendremos que comprobar si existe espacio libre en nuestro array para introducir un nuevo libro. Si no hay espacio libre, se mostrará el siguiente mensaje:
 
 > Tienes muchos libros en la tienda, elimina un libro.
+> 
 > ¿Quieres continuar en el programa? SI / NO
 
 Si existe espacio libre, se le pedirá al usuario el título y el precio del libro y se guardará dentro de los arrays (en la última posición).
 
 > ¿Cuál es el título del libro? Aladin
+> 
 > ¿Cuál es el precio? 19
+> 
 > El libro ha sido guardado.
+> 
 > ¿Quieres continuar en el programa? SI / NO
 
 #### 5. Eliminar un libro.
@@ -403,7 +410,9 @@ Si existe espacio libre, se le pedirá al usuario el título y el precio del lib
 Se le pedirá al usuario el título del libro, se eliminará y se compactará el array.
 
 > ¿Cuál es el título del libro? Aladin
+> 
 > El libro ha sido eliminado.
+> 
 > ¿Quieres continuar en el programa? SI / NO
 
 *Recuerda que se deben eliminar el título y el precio del libro.*
@@ -413,10 +422,15 @@ Se le pedirá al usuario el título del libro, se eliminará y se compactará el
 Se le pedirá al usuario el título y el nuevo precio del libro a modificar. Después de comprobar que existe el libro, se cambiará el precio.
 
 > ¿Cuál es el título del libro? Aladin
+> 
 > El precio del libro Aladin son 19 euros.
+> 
 > ¿Cuál es el nuevo precio? 20
+> 
 > El precio ha sido cambiado.
+> 
 > El nuevo precio del libro Aladin son 20 euros.
+> 
 > ¿Quieres continuar en el programa? SI / NO
 
 #### 7. Modificar el título de un libro.
@@ -424,9 +438,13 @@ Se le pedirá al usuario el título y el nuevo precio del libro a modificar. Des
 Se le pedirá al usuario el título del libro. Después de comprobar que existe el libro, se modificara el título.
 
 > ¿Cuál es el título del libro? Aladin
+> 
 > ¿Cuál es el nuevo título del libro? Aladin y la lámpara maravillosa
+> 
 > El título ha sido modificado.
+> 
 > El nuevo título del libro Aladin es Aladin y la lámpara maravillosa.
+> 
 > ¿Quieres continuar en el programa? SI / NO
 
 #### 8. Salir del programa.
@@ -441,6 +459,5 @@ Se terminará el programa.
 
 ## Unidad 04 ________________________________________
 
-```
 
-```
+
