@@ -268,10 +268,10 @@ Hay que tener en cuenta la siguiente tabla:
 2 .- Salir del programa.
 
 Dar las gracias al usuario y finaliza el programa.
+
+>Muchas gracias y hasta pronto.
+>
 ***************************************
-
-Muchas gracias y hasta pronto.
-
 
 ## Unidad 03 ________________________________________
 
