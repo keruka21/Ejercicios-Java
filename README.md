@@ -24,6 +24,5 @@
 
 - **src** -> Código de cada ejercicio.
 
-### Documentos
+- -**Enunciados** -> Enunciados de los ejercicios de cada unidad.
 
-Enunciados de los ejercicios de cada unidad.
