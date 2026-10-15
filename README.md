@@ -16,13 +16,13 @@
 - Strings.
 - Métodos para Strings.
 
-  ************************************************************
+************************************************************
 
 ## Directorios
 
-**docs** -> Teoría y enunciados de ejercicios.
+- **docs** -> Teoría y enunciados de ejercicios.
 
-**src** -> Código de cada ejercicio.
+- **src** -> Código de cada ejercicio.
 
 ### Documentos
 
