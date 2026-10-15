@@ -13,8 +13,17 @@
 - Bucles: While, Do while, For.
 - Condicionales.
 - Estructuras de control: validaciones con bucles y condicionales.
+- Switch (menús)
 - Strings.
 - Métodos para Strings.
+
+ 
+## Unidad 03
+
+- Arrays
+- Métodos estáticos.
+- Math.
+
 
 ************************************************************
 
@@ -24,5 +33,5 @@
 
 - **src** -> Código de cada ejercicio.
 
-- -**Enunciados** -> Enunciados de los ejercicios de cada unidad.
+- **Enunciados** -> Enunciados de los ejercicios de cada unidad.
 
