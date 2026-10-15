@@ -1,4 +1,4 @@
-# Unidad 03 ________________________________________
+# Unidad 03
 
 ## Ejercicios sencillos de Arrays - Ejercicio 1:
 
@@ -83,9 +83,11 @@ Vamos a crear un programa para gestionar una tienda de libros de nuestro pueblo.
 Al iniciar el programa se crearán 2 arrays.
 
 * **Título**: Aquí guardaremos los títulos de los libros de la tienda.
+* 
 * Tendrá 20 posiciones
 * Guardará variables de tipo `String`
 * Valores iniciales: (las posiciones 12-19 no tendrán valores iniciales)
+* 
 * 0 - Nada
 * 1 - Tímidamente de la oscuridad a la luz
 * 2 - Pájaros a golpes
