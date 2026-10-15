@@ -136,20 +136,24 @@ Después se le dará la bienvenida al usuario y se le mostrará el siguiente men
 
 Después de cada opción (excepto la última opción), se le mostrará esta pregunta al usuario:
 
+
 >¿Quieres continuar en el programa? SI / NO
 
 #### 1. Mostrar el título de todos los libros.
 
+
 Se mostrarán todos los títulos de los libros de la tienda de libros.
 
+
 #### 2. Mostrar el título y el precio de todos los libros.
+
 
 Se mostrarán todos los títulos y precios de los libros de la tienda de libros.
 
 *Por ejemplo:* El precio del libro Tímidamente de la oscuridad a la luz son 12 euros.
 
-
 ¿Quieres continuar en el programa? SI / NO
+
 
 #### 3. Mostrar el precio de un libro.
 
@@ -162,6 +166,7 @@ Se le pedirá al usuario el título de un libro y se mostrará por pantalla el p
 > El precio del libro "Tímidamente de la oscuridad a la luz” son 12 euros.
 > 
 > ¿Quieres continuar en el programa? SI / NO
+> 
 
 #### 4. Introducir un nuevo libro.
 
@@ -173,11 +178,13 @@ Se le pedirá al usuario el título y el precio del libro y se guardará dentro 
 > 
 > El libro ha sido guardado.
 
+
 Primero tendremos que comprobar si existe espacio libre en nuestro array para introducir un nuevo libro. Si no hay espacio libre, se mostrará el siguiente mensaje:
 
 > Tienes muchos libros en la tienda, elimina un libro.
 > 
 > ¿Quieres continuar en el programa? SI / NO
+
 
 Si existe espacio libre, se le pedirá al usuario el título y el precio del libro y se guardará dentro de los arrays (en la última posición).
 
@@ -189,6 +196,7 @@ Si existe espacio libre, se le pedirá al usuario el título y el precio del lib
 > 
 > ¿Quieres continuar en el programa? SI / NO
 
+
 #### 5. Eliminar un libro.
 
 Se le pedirá al usuario el título del libro, se eliminará y se compactará el array.
@@ -198,12 +206,15 @@ Se le pedirá al usuario el título del libro, se eliminará y se compactará el
 > El libro ha sido eliminado.
 > 
 > ¿Quieres continuar en el programa? SI / NO
+> 
 
 *Recuerda que se deben eliminar el título y el precio del libro.*
+
 
 #### 6. Modificar el precio de un libro.
 
 Se le pedirá al usuario el título y el nuevo precio del libro a modificar. Después de comprobar que existe el libro, se cambiará el precio.
+
 
 > ¿Cuál es el título del libro? Aladin
 > 
@@ -216,10 +227,14 @@ Se le pedirá al usuario el título y el nuevo precio del libro a modificar. Des
 > El nuevo precio del libro Aladin son 20 euros.
 > 
 > ¿Quieres continuar en el programa? SI / NO
+> 
+
 
 #### 7. Modificar el título de un libro.
 
+
 Se le pedirá al usuario el título del libro. Después de comprobar que existe el libro, se modificara el título.
+
 
 > ¿Cuál es el título del libro? Aladin
 > 
@@ -230,16 +245,23 @@ Se le pedirá al usuario el título del libro. Después de comprobar que existe 
 > El nuevo título del libro Aladin es Aladin y la lámpara maravillosa.
 > 
 > ¿Quieres continuar en el programa? SI / NO
+> 
+
 
 #### 8. Salir del programa.
 
+
 Se terminará el programa.
+
 
 ***************************************
 
+
 ## Documento Word: Librería con Métodos Estáticos.
 
+
 Crea métodos estáticos para cada opción del menú dl ejercicio anterior.
+
 
 ***************************************
 
