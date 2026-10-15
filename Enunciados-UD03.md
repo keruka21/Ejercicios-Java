@@ -260,10 +260,68 @@ Se terminará el programa.
 ## Documento Word: Librería con Métodos Estáticos.
 
 
-Crea métodos estáticos para cada opción del menú dl ejercicio anterior.
+Crea métodos estáticos para cada opción del menú del ejercicio anterior.
 
 
 ***************************************
+
+## PDF (Arrays y Métodos estáticos) - Ejercicio 1:
+
+Define un array y rellénalo con números aleatorios de 0 a 100 (mirar aquí).
+Muestra el siguiente menú:
+
+1.Salir
+2. Mostrar la suma
+3. Mostrar el máximo
+4. Mostrar el mínimo
+5. Mostrar la media
+6. Rellenarlo de nuevo con números (formatear)
+
+(Buscar como se usa `Math.random()`)
+
+## PDF (Arrays y Métodos estáticos) - Ejercicio 2: Array y String.
+
+Rellena un array de tamaño 5 con nombres de manera estática (sin introducirlos por teclado). Muestra el siguiente menú:
+
+1. Salir
+2. Mostrar lista
+3. Pedir un nombre y contar las veces que aparece
+4. Pedir un nombre y decir si existe
+5. Eliminar. Pedir un nombre y en el lugar de ese nombre introducir “null”.
+
+## PDF (Arrays y Métodos estáticos) - Ejercicio 3:
+
+Crear dos arrays, arrMeses y arrLitros. En el primero guarda los meses desde
+enero a mayo, y en el segundo 123, 333, 180, 211, 90.
+
+Por ejemplo:
+> arrMeses[0] – enero
+> arrLitros[0] -- 123
+
+- Mostrar en cada mes cuántos litros han llovido.
+- Mostrar en pantalla el mes y los litros del mes más lluvioso.
+ 
+
+## PDF (Arrays y Métodos estáticos) - Ejercicio 4:
+
+Teniendo un array de nombre y otro de edades de una clase. Saca por pantalla los siguientes datos:
+
+>Alumnos: Jon, Sara, Ander, Marta, Jone, Mikel
+>Edad: 18,20,26,21,17,24
+
+- El nombre y edad del más joven.
+- El nombre y edad del mayor.
+
+## PDF (Arrays y Métodos estáticos) - Ejercicio 5: La temperatura de los días de la semana.
+
+La temperatura de los días de la semana leerla en ºC.
+Habrá que calcular y mostrar lo siguiente:
+
+- La media de la semana en ºF.
+- El día más caluroso y más frio
+- Los días por encima de la media.
+- Los días por debajo de la media.
+
 
 ---
 
