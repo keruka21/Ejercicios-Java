@@ -314,7 +314,7 @@ Teniendo un array de nombre y otro de edades de una clase. Saca por pantalla los
 
 ## PDF (Arrays y Métodos estáticos) - Ejercicio 5: La temperatura de los días de la semana.
 
-La temperatura de los días de la semana leerla en ºC.
+La temperatura de los días de la semana, leerla en ºC.
 Habrá que calcular y mostrar lo siguiente:
 
 - La media de la semana en ºF.
