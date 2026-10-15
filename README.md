@@ -20,8 +20,9 @@
 
 ## Directorios
 
-docs -> Teoría y enunciados de ejercicios.
-src -> Código de cada ejercicio.
+**docs** -> Teoría y enunciados de ejercicios.
+
+**src** -> Código de cada ejercicio.
 
 ### Documentos
 
