@@ -82,48 +82,44 @@ Desde el `main`, pide dos números por teclado y muestra un menú con las distin
 Vamos a crear un programa para gestionar una tienda de libros de nuestro pueblo.
 Al iniciar el programa se crearán 2 arrays.
 
-* **Título**: Aquí guardaremos los títulos de los libros de la tienda.
-* 
-* Tendrá 20 posiciones
-* Guardará variables de tipo `String`
-* Valores iniciales: (las posiciones 12-19 no tendrán valores iniciales)
-* 
-* 0 - Nada
-* 1 - Tímidamente de la oscuridad a la luz
-* 2 - Pájaros a golpes
-* 3 - Caperucita Roja
-* 4 - 12 cuentos clásicos
-* 5 - Pepe y Mila
-* 6 - Enojaos
-* 7 - En casa vacía
-* 8 - 123
-* 9 - Día Negro
-* 10 - El Hobbit
-* 11 - Calle Judía
+**Título**: Aquí guardaremos los títulos de los libros de la tienda.
+
+- Tendrá 20 posiciones.
+- Guardará variables de tipo `String`.
+- Valores iniciales: (las posiciones 12-19 no tendrán valores iniciales).
+
+0. Nada
+1. Tímidamente de la oscuridad a la luz
+2. Pájaros a golpes
+3. Caperucita Roja
+4. 12 cuentos clásicos
+5. Pepe y Mila
+6. Enojaos
+7. En casa vacía
+8. 123
+9. Día Negro
+10. El Hobbit
+11. Calle Judía
 
 
+**Precios** :Aquí guardaremos los precios de los libros.
 
-
-* **Precio**: Aquí guardaremos los precios de los libros.
-* Tendrá 20 posiciones
-* Guardará variables de tipo `int`
-* Valores iniciales: (las posiciones 12-19 no tendrán valores iniciales)
-* 0 - 15
-* 1 - 12
-* 2 - 15
-* 3 - 25
-* 4 - 19
-* 5 - 17
-* 6 - 25
-* 7 - 13
-* 8 - 11
-* 9 - 18
-* 10 - 25
-* 11 - 35
-
-
-
-
+- Tendrá 20 posiciones.
+- Guardará variables de tipo `int`.
+- Valores iniciales: (las posiciones 12-19 no tendrán valores iniciales).
+  
+0. 15
+1. 12
+2. 15
+3. 25
+4. 19
+5. 17
+6. 25
+7. 13
+8. 11
+9. 18
+10. 25
+11. 35
 
 Por lo tanto, el precio del libro “Tímidamente de la oscuridad a la luz” son 12 euros.
 
@@ -140,13 +136,13 @@ Después se le dará la bienvenida al usuario y se le mostrará el siguiente men
 
 Después de cada opción (excepto la última opción), se le mostrará esta pregunta al usuario:
 
-**¿Quieres continuar en el programa? SI / NO**
+>¿Quieres continuar en el programa? SI / NO
 
-### 1. Mostrar el título de todos los libros.
+#### 1. Mostrar el título de todos los libros.
 
 Se mostrarán todos los títulos de los libros de la tienda de libros.
 
-### 2. Mostrar el título y el precio de todos los libros.
+#### 2. Mostrar el título y el precio de todos los libros.
 
 Se mostrarán todos los títulos y precios de los libros de la tienda de libros.
 
@@ -155,7 +151,7 @@ Se mostrarán todos los títulos y precios de los libros de la tienda de libros.
 
 ¿Quieres continuar en el programa? SI / NO
 
-### 3. Mostrar el precio de un libro.
+#### 3. Mostrar el precio de un libro.
 
 Se le pedirá al usuario el título de un libro y se mostrará por pantalla el precio de dicho libro. (Cuidado con las mayúsculas y minúsculas)
 
@@ -167,7 +163,7 @@ Se le pedirá al usuario el título de un libro y se mostrará por pantalla el p
 > 
 > ¿Quieres continuar en el programa? SI / NO
 
-### 4. Introducir un nuevo libro.
+#### 4. Introducir un nuevo libro.
 
 Se le pedirá al usuario el título y el precio del libro y se guardará dentro de los arrays (En la primera posición libre).
 
@@ -193,7 +189,7 @@ Si existe espacio libre, se le pedirá al usuario el título y el precio del lib
 > 
 > ¿Quieres continuar en el programa? SI / NO
 
-### 5. Eliminar un libro.
+#### 5. Eliminar un libro.
 
 Se le pedirá al usuario el título del libro, se eliminará y se compactará el array.
 
@@ -205,7 +201,7 @@ Se le pedirá al usuario el título del libro, se eliminará y se compactará el
 
 *Recuerda que se deben eliminar el título y el precio del libro.*
 
-### 6. Modificar el precio de un libro.
+#### 6. Modificar el precio de un libro.
 
 Se le pedirá al usuario el título y el nuevo precio del libro a modificar. Después de comprobar que existe el libro, se cambiará el precio.
 
@@ -221,7 +217,7 @@ Se le pedirá al usuario el título y el nuevo precio del libro a modificar. Des
 > 
 > ¿Quieres continuar en el programa? SI / NO
 
-### 7. Modificar el título de un libro.
+#### 7. Modificar el título de un libro.
 
 Se le pedirá al usuario el título del libro. Después de comprobar que existe el libro, se modificara el título.
 
@@ -235,15 +231,18 @@ Se le pedirá al usuario el título del libro. Después de comprobar que existe 
 > 
 > ¿Quieres continuar en el programa? SI / NO
 
-### 8. Salir del programa.
+#### 8. Salir del programa.
 
 Se terminará el programa.
 
 ***************************************
 
-### Documento Word: Librería con Métodos Estáticos.
+## Documento Word: Librería con Métodos Estáticos.
+
+Crea métodos estáticos para cada opción del menú dl ejercicio anterior.
+
+***************************************
 
 ---
 
-## Unidad 04 ________________________________________
 
