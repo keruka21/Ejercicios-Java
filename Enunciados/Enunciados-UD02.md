@@ -1,4 +1,4 @@
-# Unidad 02 ________________________________________
+# Unidad 02
 
 ## Documento Word - Ejercicio 1: ¿Puede entrar?
 Un local tiene una edad mínima de 18 años para poder entrar.
