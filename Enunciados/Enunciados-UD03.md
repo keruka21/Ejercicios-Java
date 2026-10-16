@@ -322,6 +322,140 @@ Habrá que calcular y mostrar lo siguiente:
 - Los días por encima de la media.
 - Los días por debajo de la media.
 
+***************************************
+
+## PDF Tienda 2.
+Vamos a crear un programa para gestionar nuestra tienda utilizando los métodos de
+java. Al iniciar el programa se crearán 2 arrays de 50 posiciones. El primer array contendrá
+los nombres de los artículos y el segundo el precio de los mismos.
+
+El programa principal tendrá el siguiente menú:
+1. Añadir artículos y precios
+2. Mostrar productos de la tienda
+3. Obtener el precio de un producto
+4. Obtener el IVA de un producto
+5. Modificar el precio de un producto
+6. Eliminar un producto
+7. Salir
+¿Qué quieres hacer?
+
+**1.- Añadir artículos y precios.**
+Se le pedirá al usuario que introduzca el nombre y el precio de un nuevo artículo.
+En caso de que el array esté lleno, se mostrará un mensaje de error. Daremos opción al
+usuario de introducir más de un artículo con su correspondiente precio.
+Ejemplo:
+
+>Introduce el nombre del artículo:
+>>Goma
+>Introduce el precio del producto:
+>>0,2
+>El artículo ha sido introducido.
+>__
+>
+>¿Qué quieres hacer?
+>1
+>No hay espacio libre.
+
+**2.- Mostrar productos de la tienda.**
+Se le mostrarán los nombres y precios de los artículos. En caso de que el array no
+tenga datos, se mostrará un mensaje informativo.
+Ejemplo:
+
+>El precio del artículo goma es de 1.0 €
+>El precio del artículo lápiz es de 1.0 €
+>__
+>
+>¿Qué quieres hacer?
+>>2
+>No hay productos en la tienda.
+
+**3.- Obtener el precio de un producto.**
+Se le pedirá al usuario el nombre de un producto y se mostrará su precio. En caso de
+que el array no tenga datos, se mostrará un mensaje informativo. Si el producto no se
+encuentra en el array, se le mostrará un mensaje de error.
+
+>¿Qué quieres hacer?
+>>3
+>¿Cuál es el nombre del artículo?
+>>Cuento
+>El artículo no existe.
+>__
+>
+>¿Qué quieres hacer?
+>>3
+>¿Cuál es el nombre del artículo?
+>>Lápiz
+>El precio del artículo lápiz es de 1.0 €
+>__
+>
+>No hay artículos en la tienda.
+
+**4.- Obtener el iva de un producto.**
+Se le pedirá al usuario el nombre de un producto y se mostrará su iva (21%). En caso
+de que el array no tenga datos, se mostrará un mensaje informativo. Si el producto no
+se encuentra en el array, se le mostrará un mensaje de error.
+
+>¿Qué quieres hacer?
+>>4
+>¿Cuál es el nombre del artículo?
+>>Cuento
+>El artículo no existe.
+>__
+>
+>¿Qué quieres hacer?
+>>4
+>¿Cual es el nombre del artículo?
+>>Lápiz
+>El IVA del artículo Lápiz es 0.21€
+>__
+>
+>No hay artículos en la tienda.
+
+**5.- Modificar el precio de un producto.**
+Se le pedirá al usuario el nombre de un producto y el nuevo precio. En caso de que el
+array no tenga datos, se mostrará un mensaje informativo. Si el producto no se
+encuentra en el array, se le mostrará un mensaje de error.
+
+>¿Qué quieres hacer?
+>>5
+>¿Cuál es el nombre del artículo?
+>>Lápiz
+>Introduce el nuevo precio del producto:
+>>2
+>El precio del Lápiz ha sido modificado.
+>__
+>
+>¿Cuál es el nombre del artículo?
+>>Cuento
+>El artículo no existe.
+>__
+>
+>No hay artículos en la tienda.
+
+
+**6.- Eliminar un producto.**
+
+Se le pedirá al usuario el nombre de un producto y se le pedirá confirmación antes de
+borrarlo. En caso de que el array no tenga datos, se mostrará un mensaje informativo.
+Si el producto no se encuentra en el array, se le mostrará un mensaje de error.
+¿Qué quieres hacer?
+>6
+¿Cuál es el nombre del artículo que quieres eliminar?
+>Lapiz
+¿Estás segur@ de que quieres eliminarlo?
+>Si
+Producto eliminado correctamente
+__
+
+¿Cuál es el nombre del artículo?
+>Cuento
+El artículo no existe.
+__
+
+No hay artículos en la tienda.
+
+
+**7.- Salir del programa.**
 
 ---
 
