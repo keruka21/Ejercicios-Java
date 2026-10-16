@@ -134,10 +134,6 @@ Después se le dará la bienvenida al usuario y se le mostrará el siguiente men
 7. Modificar el título de un libro.
 8. Salir del programa.
 
-Después de cada opción (excepto la última opción), se le mostrará esta pregunta al usuario:
-
-
->¿Quieres continuar en el programa? SI / NO
 
 #### 1. Mostrar el título de todos los libros.
 
@@ -148,11 +144,9 @@ Se mostrarán todos los títulos de los libros de la tienda de libros.
 #### 2. Mostrar el título y el precio de todos los libros.
 
 
-Se mostrarán todos los títulos y precios de los libros de la tienda de libros.
+Se mostrarán todos los títulos y precios de los libros de la tienda de libros. Por ejemplo:
 
-*Por ejemplo:* El precio del libro Tímidamente de la oscuridad a la luz son 12 euros.
-
-¿Quieres continuar en el programa? SI / NO
+>El precio del libro Tímidamente de la oscuridad a la luz son 12 euros.
 
 
 #### 3. Mostrar el precio de un libro.
@@ -164,8 +158,6 @@ Se le pedirá al usuario el título de un libro y se mostrará por pantalla el p
 > ¿Cuál es el título del libro? Tímidamente de la oscuridad a la luz
 > 
 > El precio del libro "Tímidamente de la oscuridad a la luz” son 12 euros.
-> 
-> ¿Quieres continuar en el programa? SI / NO
 > 
 
 #### 4. Introducir un nuevo libro.
@@ -182,8 +174,6 @@ Se le pedirá al usuario el título y el precio del libro y se guardará dentro 
 Primero tendremos que comprobar si existe espacio libre en nuestro array para introducir un nuevo libro. Si no hay espacio libre, se mostrará el siguiente mensaje:
 
 > Tienes muchos libros en la tienda, elimina un libro.
-> 
-> ¿Quieres continuar en el programa? SI / NO
 
 
 Si existe espacio libre, se le pedirá al usuario el título y el precio del libro y se guardará dentro de los arrays (en la última posición).
@@ -193,8 +183,6 @@ Si existe espacio libre, se le pedirá al usuario el título y el precio del lib
 > ¿Cuál es el precio? 19
 > 
 > El libro ha sido guardado.
-> 
-> ¿Quieres continuar en el programa? SI / NO
 
 
 #### 5. Eliminar un libro.
@@ -204,9 +192,7 @@ Se le pedirá al usuario el título del libro, se eliminará y se compactará el
 > ¿Cuál es el título del libro? Aladin
 > 
 > El libro ha sido eliminado.
-> 
-> ¿Quieres continuar en el programa? SI / NO
-> 
+>
 
 *Recuerda que se deben eliminar el título y el precio del libro.*
 
@@ -226,8 +212,6 @@ Se le pedirá al usuario el título y el nuevo precio del libro a modificar. Des
 > 
 > El nuevo precio del libro Aladin son 20 euros.
 > 
-> ¿Quieres continuar en el programa? SI / NO
-> 
 
 
 #### 7. Modificar el título de un libro.
@@ -243,8 +227,6 @@ Se le pedirá al usuario el título del libro. Después de comprobar que existe 
 > El título ha sido modificado.
 > 
 > El nuevo título del libro Aladin es Aladin y la lámpara maravillosa.
-> 
-> ¿Quieres continuar en el programa? SI / NO
 > 
 
 
@@ -325,6 +307,7 @@ Habrá que calcular y mostrar lo siguiente:
 ***************************************
 
 ## PDF Tienda 2.
+
 Vamos a crear un programa para gestionar nuestra tienda utilizando los métodos de
 java. Al iniciar el programa se crearán 2 arrays de 50 posiciones. El primer array contendrá
 los nombres de los artículos y el segundo el precio de los mismos.
@@ -339,16 +322,17 @@ El programa principal tendrá el siguiente menú:
 7. Salir
 ¿Qué quieres hacer?
 
-**1.- Añadir artículos y precios.**
+#### 1.- Añadir artículos y precios.
+
 Se le pedirá al usuario que introduzca el nombre y el precio de un nuevo artículo.
 En caso de que el array esté lleno, se mostrará un mensaje de error. Daremos opción al
 usuario de introducir más de un artículo con su correspondiente precio.
 Ejemplo:
 
 >Introduce el nombre del artículo:
->>Goma
+>Goma
 >Introduce el precio del producto:
->>0,2
+>0,2
 >El artículo ha sido introducido.
 >__
 >
@@ -356,103 +340,150 @@ Ejemplo:
 >1
 >No hay espacio libre.
 
-**2.- Mostrar productos de la tienda.**
+#### 2.- Mostrar productos de la tienda.
+
 Se le mostrarán los nombres y precios de los artículos. En caso de que el array no
 tenga datos, se mostrará un mensaje informativo.
 Ejemplo:
 
 >El precio del artículo goma es de 1.0 €
+>
 >El precio del artículo lápiz es de 1.0 €
 >__
 >
 >¿Qué quieres hacer?
->>2
+>
+>2
+>
 >No hay productos en la tienda.
+>
 
-**3.- Obtener el precio de un producto.**
+#### 3.- Obtener el precio de un producto.
+
 Se le pedirá al usuario el nombre de un producto y se mostrará su precio. En caso de
 que el array no tenga datos, se mostrará un mensaje informativo. Si el producto no se
 encuentra en el array, se le mostrará un mensaje de error.
 
 >¿Qué quieres hacer?
->>3
+>
+>3
+>
 >¿Cuál es el nombre del artículo?
->>Cuento
+>
+>Cuento
+>
 >El artículo no existe.
+>
 >__
 >
 >¿Qué quieres hacer?
->>3
+>
+>3
+>
 >¿Cuál es el nombre del artículo?
->>Lápiz
+>
+>Lápiz
+>
 >El precio del artículo lápiz es de 1.0 €
+>
 >__
 >
 >No hay artículos en la tienda.
 
-**4.- Obtener el iva de un producto.**
+#### 4.- Obtener el iva de un producto.
+
 Se le pedirá al usuario el nombre de un producto y se mostrará su iva (21%). En caso
 de que el array no tenga datos, se mostrará un mensaje informativo. Si el producto no
 se encuentra en el array, se le mostrará un mensaje de error.
 
 >¿Qué quieres hacer?
->>4
+>
+>4
+>
 >¿Cuál es el nombre del artículo?
->>Cuento
+>
+>Cuento
+>
 >El artículo no existe.
+>
 >__
 >
 >¿Qué quieres hacer?
->>4
+>
+>4
 >¿Cual es el nombre del artículo?
->>Lápiz
+>
+>Lápiz
+>
 >El IVA del artículo Lápiz es 0.21€
+>
 >__
 >
 >No hay artículos en la tienda.
 
-**5.- Modificar el precio de un producto.**
+#### 5.- Modificar el precio de un producto.
+
 Se le pedirá al usuario el nombre de un producto y el nuevo precio. En caso de que el
 array no tenga datos, se mostrará un mensaje informativo. Si el producto no se
 encuentra en el array, se le mostrará un mensaje de error.
 
 >¿Qué quieres hacer?
->>5
+>
+>5
+>
 >¿Cuál es el nombre del artículo?
->>Lápiz
+>
+>Lápiz
+>
 >Introduce el nuevo precio del producto:
->>2
+>
+>2
+>
 >El precio del Lápiz ha sido modificado.
+>
 >__
 >
 >¿Cuál es el nombre del artículo?
->>Cuento
+>
+>Cuento
+>
 >El artículo no existe.
+>
 >__
 >
 >No hay artículos en la tienda.
 
 
-**6.- Eliminar un producto.**
+#### 6.- Eliminar un producto.
 
 Se le pedirá al usuario el nombre de un producto y se le pedirá confirmación antes de
 borrarlo. En caso de que el array no tenga datos, se mostrará un mensaje informativo.
 Si el producto no se encuentra en el array, se le mostrará un mensaje de error.
-¿Qué quieres hacer?
+
+>¿Qué quieres hacer?
+>
 >6
-¿Cuál es el nombre del artículo que quieres eliminar?
+>
+>¿Cuál es el nombre del artículo que quieres eliminar?
+>
 >Lapiz
-¿Estás segur@ de que quieres eliminarlo?
+>
+>¿Estás segur@ de que quieres eliminarlo?
+>
 >Si
-Producto eliminado correctamente
-__
-
-¿Cuál es el nombre del artículo?
+>
+>Producto eliminado correctamente
+>__
+>
+>¿Cuál es el nombre del artículo?
+>
 >Cuento
-El artículo no existe.
-__
-
-No hay artículos en la tienda.
+>
+>El artículo no existe.
+>
+>__
+>
+>No hay artículos en la tienda.
 
 
 **7.- Salir del programa.**
