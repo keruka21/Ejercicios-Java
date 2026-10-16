@@ -68,15 +68,18 @@ public class ArrayString {
         System.out.println("Introduce el nombre que deseas eliminar: ");
         mostrar(aNombres);
         String nombre = sc.next();
+        boolean eliminado = false;
       
         for(int i = 0; i < aNombres.length; i++) {
-            if (aNombres[i] != null && aNombres[i].equalsIgnoreCase(nombre)) {
+            if (!eliminado && aNombres[i] != null && aNombres[i].equalsIgnoreCase(nombre)) {
                 aNombres[i] = "null";
                 System.out.println("Nombre eliminado");
-                return;
+                eliminado = true;
             }
         }
-        System.out.println("No se ha encontrado ese nombre en la lista.");
+        if (!eliminado) {
+            System.out.println("No se ha encontrado ese nombre en la lista.");
+        }
     }
     
     public static void main(String[] args) {
@@ -115,7 +118,7 @@ public class ArrayString {
                 eliminar(aNombres, sc);
                 break;
             default:
-                System.out.println("Error. Elija una opción valida:");
+                System.out.println("Error. Elija una opción válida:");
                 break;
             }
             
