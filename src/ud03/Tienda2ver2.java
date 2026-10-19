@@ -6,7 +6,7 @@ public class Tienda2ver2 {
 
 	public static void main(String[] args) {
 		//variables
-		Scanner teclado = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 		String productos[] = new String[50];
 		int precio[] = new int[50];
 		int opciones;
@@ -22,26 +22,26 @@ public class Tienda2ver2 {
 			System.out.println("7.- Salir del programa.");
 			System.out.print("Introduce una opcion:");
 
-			opciones = teclado.nextInt();
+			opciones = sc.nextInt();
 
 			switch (opciones) {
 			case 1:
-				introducirProducto(productos, precio, teclado);
+				introducirProducto(productos, precio, sc);
 				break;
 			case 2:
-				mostrarProductosyPrecios(productos, precio, teclado);
+				mostrarProductosyPrecios(productos, precio, sc);
 				break;
 			case 3:
-				mostrarPrecio(productos, precio, teclado);
+				mostrarPrecio(productos, precio, sc);
 				break;
 			case 4:
-				mostrarIva(productos, teclado);
+				mostrarIva(productos, sc);
 				break;
 			case 5:
-				cambiarPrecio(productos, precio, teclado);
+				cambiarPrecio(productos, precio, sc);
 				break;
 			case 6:
-				eliminarProducto(productos, precio, teclado);
+				eliminarProducto(productos, precio, sc);
 				break;
 			case 7:
 				System.out.println("Has cerrado el programa");
@@ -53,7 +53,7 @@ public class Tienda2ver2 {
 
 		} while (opciones != 7);
 
-		teclado.close();
+		sc.close();
 	}
 
 	public static void introducirProducto(String[] productos, int[] precio, Scanner teclado) {
