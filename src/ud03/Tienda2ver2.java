@@ -2,7 +2,7 @@ package ud03;
 
 import java.util.Scanner;
 
-public class Tiendav2 {
+public class Tienda2ver2 {
 
 	public static void main(String[] args) {
 		//variables
