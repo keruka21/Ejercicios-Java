@@ -34,8 +34,8 @@ El título y el autor serán obligatorios, mientras que el número de páginas s
 - Crea sus métodos get, set y toString.
   
 Tendrá dos métodos especiales:
-- esLargo(): devuelve un valor lógico indicando si el libro tiene más de 300 páginas.
-- mostrarInformacion(): muestra por pantalla toda la información del libro.
+- **esLargo()**: devuelve un valor lógico indicando si el libro tiene más de 300 páginas.
+- **mostrarInformacion()**: muestra por pantalla toda la información del libro.
 
   
 ## Documento Word - Ejercicio 4
@@ -44,11 +44,11 @@ Vamos a crear un programa que me gestione personas. Nuestro programa podrá mani
 
 Basándote en el ejercicio 2, crea una aplicación que gestione el siguiente menú repetitivo.
 
-1.- Introducir las personas (pedimos los datos de TODAS las personas y los almacenamos para usos posteriores). 
-2.- Muestra la persona de mayor edad. 
-3.- Muestra la información de una persona tras introducir su DNI. 
-4.- Muestra la información de todas las personas. 
-5.- Salir.
+**1.- Introducir las personas (pedimos los datos de TODAS las personas y los almacenamos para usos posteriores). 
+**2.- Muestra la persona de mayor edad. 
+**3.- Muestra la información de una persona tras introducir su DNI. 
+**4.- Muestra la información de todas las personas. 
+**5.- Salir.
 
 ## Documento Word - Ejercicio 5
 
