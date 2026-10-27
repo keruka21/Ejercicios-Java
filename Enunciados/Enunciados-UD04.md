@@ -42,7 +42,7 @@ Tendrá dos métodos especiales:
 
 Vamos a crear un programa que me gestione personas. Nuestro programa podrá manipular hasta 10 personas distintas. 
 
-Basándote en el ejercicio 2, crea una aplicación que gestione el siguiente menú repetitivo.
+Basándote en el **ejercicio 2**, crea una aplicación que gestione el siguiente menú repetitivo.
 
 1. Introducir las personas (pedimos los datos de TODAS las personas y los almacenamos para usos posteriores).
 2. Muestra la persona de mayor edad. 
@@ -54,18 +54,21 @@ Basándote en el ejercicio 2, crea una aplicación que gestione el siguiente men
 
 Vamos a crear un programa que me gestione las cuentas de un banco. Nuestro programa podrá manipular hasta 50 cuentas distintas. 
 
-Basándote en el ejercicio 1, crea una aplicación que gestione el siguiente menú repetitivo: 
-Introducir cuenta/s. 
-	OJO: Como máximo hay 50 cuentas, lo que no significa que al elegir esta opción introduzca las 50. Controlar, eso sí, que no pueda introducir más de 50. 
-Muestra las cuentas introducidas.
-Ingresar una cantidad a un titular concreto introducido por teclado (Llama al método ingresar y controla la posibilidad de que no exista el titular). 
-Retirar de todas las cuentas introducidas, la comisión de 12€ (Llama al método retirar). 
-Muestra la cuenta de mayor saldo. 
-Muestras las cuentas que tengan saldo superior a uno introducido por teclado. Si no hay, mensaje indicándolo. 
-Muestra la cuenta de un titular concreto. Controlar si no encuentra. 
-Muestra las cuentas de los titulares que contengan un grupo de letras, introducido por teclado, en su atributo titular. 
-Ordena y muestra las cuentas según su saldo (de mayor a menor saldo).
-Salir 
+Basándote en el **ejercicio 1**, crea una aplicación que gestione el siguiente menú repetitivo: 
+1. Introducir cuenta/s.
+>
+>OJO: Como máximo hay 50 cuentas, lo que no significa que al elegir esta opción introduzca las 50. Controlar, eso sí, que no pueda introducir más de 50.
+>
+2. Muestra las cuentas introducidas.
+3. Ingresar una cantidad a un titular concreto introducido por teclado (Llama al método ingresar y controla la posibilidad de que no exista el titular). 
+4. Retirar de todas las cuentas introducidas, la comisión de 12€ (Llama al método retirar). 
+5. Muestra la cuenta de mayor saldo. 
+6. Muestras las cuentas que tengan saldo superior a uno introducido por teclado. Si no hay, mensaje indicándolo. 
+7. Muestra la cuenta de un titular concreto. Controlar si no encuentra. 
+8. Muestra las cuentas de los titulares que contengan un grupo de letras, introducido por teclado, en su atributo titular. 
+9. Ordena y muestra las cuentas según su saldo (de mayor a menor saldo).
+10. Salir
+    
 En todas las opciones a partir de la 1, controlar previamente si hay o no cuentas introducidas. 
 Vamos a suponer que las cuentas son únicas (no hay titulares que se repiten).
 
