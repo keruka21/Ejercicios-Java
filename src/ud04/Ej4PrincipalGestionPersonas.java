@@ -11,7 +11,6 @@ Basándote en el ejercicio 2, crea una aplicación que gestione el siguiente men
     4. Muestra la información de todas las personas.
     5. Salir.
 */
-
 import java.util.Scanner;
 
 public class Ej4PrincipalGestionPersonas {
@@ -23,35 +22,25 @@ public class Ej4PrincipalGestionPersonas {
 
     //1 introducir personas
     public static void introducirDatosPersonas(Ej2Persona2[] aPersonas, Scanner sc) {
-        boolean hayEspacio = false;
 
-        for (int i = 0; i < aPersonas.length; i++) {
-            if (aPersonas[i] == null) {
-                hayEspacio = true;
-            }
-        }
-
-        if (hayEspacio) {
+        if (aPersonas[0] != null) {
+        	 System.out.println("No hay espacio para introducir más personas.");
+        }else{
             System.out.println("Introducir los datos de las personas.");
-
             for (int i = 0; i < aPersonas.length; i++) {
-                if (aPersonas[i] == null) {
-                    System.out.println("Introduce los datos de la persona " + (i + 1) + ":");
+            	System.out.println("Introduce los datos de la persona " + (i + 1) + ":");
 
-                    System.out.println("Nombre:");
-                    String nombre = sc.next();
+            	System.out.println("Nombre:");
+            	String nombre = sc.next();
 
-                    System.out.println("Edad:");
-                    int edad = sc.nextInt();
+            	System.out.println("Edad:");
+            	int edad = sc.nextInt();
 
-                    System.out.println("DNI:");
-                    String dni = sc.next();
+            	System.out.println("DNI:");
+            	String dni = sc.next();
 
-                    aPersonas[i] = new Ej2Persona2(nombre, edad, dni);
-                }
+            	aPersonas[i] = new Ej2Persona2(nombre, edad, dni);
             }
-        } else {
-            System.out.println("No hay espacio para introducir más personas.");
         }
     }
 
@@ -103,19 +92,15 @@ public class Ej4PrincipalGestionPersonas {
 
     //4 mostrar toda la información
     public static void mostrarTodaInfo(Ej2Persona2[] aPersonas) {
-        boolean vacio = true;
 
         System.out.println("Mostrar todos los datos de las personas.");
-
-        for (int i = 0; i < aPersonas.length; i++) {
-            if (aPersonas[i] != null) {
+        
+        if(aPersonas[0] != null) {
+        	for (int i = 0; i < aPersonas.length; i++) {
                 System.out.println("--- Persona " + (i + 1) + " ---");
                 aPersonas[i].mostrar();
-                vacio = false;
             }
-        }
-
-        if (vacio) {
+        }else{
             System.out.println("No hay personas introducidas.");
         }
     }
