@@ -234,7 +234,7 @@ public class Ej5PrincipalGestionCuentas {
         }
     }
 
-    //9 ordenar las cuentas de mayor a menor saldo
+    //9 ordenar las cuentas de mayor a menor saldo (método de la burbúja)
     public static void ordenarCuentas(Ej1Cuenta[] aCuentas) {
         Ej1Cuenta auxiliar;
 
