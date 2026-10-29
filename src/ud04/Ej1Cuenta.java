@@ -49,7 +49,7 @@ public class Ej1Cuenta {
 	
 	@Override
 	public String toString() {
-		return "Titular: " + titular + "\n Saldo: " + cantidad;
+		return "Titular: " + titular + "\nSaldo: " + cantidad;
 	}
 	
 	//METODOS
@@ -68,5 +68,3 @@ public class Ej1Cuenta {
 		}
 	}
 }
-
-
