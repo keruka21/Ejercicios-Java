@@ -144,14 +144,13 @@ public class Ej5PrincipalGestionCuentas {
         }
     }
 
-    //4 retirar la comisión de 12 €
+    //4 retirar la comisión de 12 € con el metodo del ejercicio 1
     public static void cobrarComision(Ej1Cuenta[] aCuentas) {
         for (int i = 0; i < aCuentas.length; i++) {
             if (aCuentas[i] != null) {
                 aCuentas[i].retirar(12);
             }
         }
-
         System.out.println("Se ha cobrado la comisión de 12 euros.");
     }
 
@@ -164,8 +163,7 @@ public class Ej5PrincipalGestionCuentas {
                 if (posicionMayor == -1) {
                     posicionMayor = i;
                 } else {
-                    if (aCuentas[i].getCantidad()
-                            > aCuentas[posicionMayor].getCantidad()) {
+                    if (aCuentas[i].getCantidad() > aCuentas[posicionMayor].getCantidad()) {
                         posicionMayor = i;
                     }
                 }
@@ -182,10 +180,12 @@ public class Ej5PrincipalGestionCuentas {
 
     //6 mostrar cuentas con saldo superior a una cantidad
     public static void cuentasPorSaldo(Ej1Cuenta[] aCuentas, Scanner sc) {
+        double saldoMinimo:
+        boolean encontrado;
+        
         System.out.println("Introduce el saldo mínimo:");
-        double saldoMinimo = sc.nextDouble();
-
-        boolean encontrado = false;
+        saldoMinimo = sc.nextDouble();
+        encontrado = false;
 
         for (int i = 0; i < aCuentas.length; i++) {
             if (aCuentas[i] != null) {
@@ -203,10 +203,13 @@ public class Ej5PrincipalGestionCuentas {
 
     //7 mostrar la cuenta de un titular concreto
     public static void buscarTitular(Ej1Cuenta[] aCuentas, Scanner sc) {
+        String titularBuscado;
+        boolean encontrado;
+        
         System.out.println("Introduce el titular que quieres buscar:");
-        String titularBuscado = sc.next();
+        titularBuscado = sc.next();
 
-        boolean encontrado = false;
+        encontrado = false;
 
         for (int i = 0; i < aCuentas.length; i++) {
             if (aCuentas[i] != null) {
@@ -224,10 +227,13 @@ public class Ej5PrincipalGestionCuentas {
 
     //8 buscar titulares que contengan un grupo de letras
     public static void buscarPorLetras(Ej1Cuenta[] aCuentas, Scanner sc) {
+        String letras;
+        boolean encontrado;
+        
         System.out.println("Introduce las letras que quieres buscar:");
-        String letras = sc.next();
+        letras = sc.next();
 
-        boolean encontrado = false;
+        encontrado = false;
 
         for (int i = 0; i < aCuentas.length; i++) {
             if (aCuentas[i] != null) {
@@ -245,22 +251,22 @@ public class Ej5PrincipalGestionCuentas {
 
     //9 ordenar las cuentas de mayor a menor saldo (método de la burbúja)
     public static void ordenarCuentas(Ej1Cuenta[] aCuentas) {
-        Ej1Cuenta auxiliar;
+        Ej1Cuenta temporal;
 
         for (int i = 0; i < aCuentas.length - 1; i++) {
             for (int j = 0; j < aCuentas.length - 1 - i; j++) {
                 if (aCuentas[j] == null) {
                     if (aCuentas[j + 1] != null) {
-                        auxiliar = aCuentas[j];
+                        temporal = aCuentas[j];
                         aCuentas[j] = aCuentas[j + 1];
-                        aCuentas[j + 1] = auxiliar;
+                        aCuentas[j + 1] = temporal;
                     }
                 } else if (aCuentas[j + 1] != null) {
                     if (aCuentas[j].getCantidad()
                             < aCuentas[j + 1].getCantidad()) {
-                        auxiliar = aCuentas[j];
+                        temporal = aCuentas[j];
                         aCuentas[j] = aCuentas[j + 1];
-                        aCuentas[j + 1] = auxiliar;
+                        aCuentas[j + 1] = temporal;
                     }
                 }
             }
