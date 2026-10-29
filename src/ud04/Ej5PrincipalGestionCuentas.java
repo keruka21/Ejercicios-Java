@@ -180,7 +180,7 @@ public class Ej5PrincipalGestionCuentas {
 
     //6 mostrar cuentas con saldo superior a una cantidad
     public static void cuentasPorSaldo(Ej1Cuenta[] aCuentas, Scanner sc) {
-        double saldoMinimo:
+        double saldoMinimo;
         boolean encontrado;
         
         System.out.println("Introduce el saldo mínimo:");
