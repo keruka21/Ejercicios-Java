@@ -49,7 +49,7 @@ public class Ej1Cuenta {
 	
 	@Override
 	public String toString() {
-		return "Cuenta titular=" + titular + ", cantidad=" + cantidad;
+		return "Cuenta titular=" + titular + "\nCantidad=" + cantidad;
 	}
 	
 	//METODOS
