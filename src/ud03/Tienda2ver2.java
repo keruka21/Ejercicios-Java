@@ -4,204 +4,245 @@ import java.util.Scanner;
 
 public class Tienda2ver2 {
 
-	public static void main(String[] args) {
-		//variables
-		Scanner sc = new Scanner(System.in);
-		String productos[] = new String[50];
-		int precio[] = new int[50];
-		int opciones;
+    // Método para comprobar si el array está completamente vacío
+    public static boolean estaVacio(String[] aArticulos) {
+        boolean vacio = true;
+        int i = 0;
+        while (i < aArticulos.length && vacio) {
+            if (aArticulos[i] != null) {
+                vacio = false;
+            }
+            i++;
+        }
+        return vacio;
+    }
 
-		do {
-			System.out.println("\nBienvenido.");
-			System.out.println("1.- Añadir articulo y precios");
-			System.out.println("2.- Mostrar productos de la tienda.");
-			System.out.println("3.- Obtener precio de un producto.");
-			System.out.println("4- Obtener IVA de un producto");
-			System.out.println("5.- Modificar precio de un producto.");
-			System.out.println("6.- Eliminar un producto");
-			System.out.println("7.- Salir del programa.");
-			System.out.print("Introduce una opcion:");
+    // Método para buscar la posición de un artículo (insensible a mayúsculas/minúsculas)
+    public static int buscarPos(String[] aArticulos, String articulo) {
+        int posEncontrado = -1;
+        int i = 0;
+        boolean encontrado = false;
+        
+        while (i < aArticulos.length && !encontrado) {
+            if (aArticulos[i] != null && aArticulos[i].equalsIgnoreCase(articulo)) {
+                posEncontrado = i;
+                encontrado = true;
+            }
+            i++;
+        }
+        return posEncontrado;
+    }
 
-			opciones = sc.nextInt();
+    // 1. Añadir artículos y precios
+    public static void introducirProPre(String[] aArticulos, double[] aPrecios, Scanner sc) {
+        String respuesta;
+        boolean seguir = true;
+        int i;
+        int posLibre;
+        String nombreArticulo;
+        double precioArticulo;
+        boolean encontradoLibre = false;
 
-			switch (opciones) {
-			case 1:
-				introducirProducto(productos, precio, sc);
-				break;
-			case 2:
-				mostrarProductosyPrecios(productos, precio, sc);
-				break;
-			case 3:
-				mostrarPrecio(productos, precio, sc);
-				break;
-			case 4:
-				mostrarIva(productos, sc);
-				break;
-			case 5:
-				cambiarPrecio(productos, precio, sc);
-				break;
-			case 6:
-				eliminarProducto(productos, precio, sc);
-				break;
-			case 7:
-				System.out.println("Has cerrado el programa");
-				break;
-			default:
-				System.out.println("Has introducido una opcion no valida,intentalo de nuevo.");
-				break;
-			}
+        while (seguir) {
+            posLibre = -1;
+            i = 0;
+            encontradoLibre = false;
+            
+            // Buscar la primera posición libre (null)
+            while (i < aArticulos.length && !encontradoLibre) {
+                if (aArticulos[i] == null) {
+                    posLibre = i;
+                    encontradoLibre = true;
+                }
+                i++;
+            }
 
-		} while (opciones != 7);
+            if (posLibre == -1) {
+                System.out.println("No hay espacio libre.");
+                seguir = false;
+            } else {
+                System.out.print("Introduce el nombre del artículo:\n> ");
+                nombreArticulo = sc.nextLine();
+                System.out.print("Introduce el precio del producto:\n> ");
+                precioArticulo = sc.nextDouble();
+                sc.nextLine(); // Limpiar el buffer
 
-		sc.close();
-	}
+                aArticulos[posLibre] = nombreArticulo;
+                aPrecios[posLibre] = precioArticulo;
+                System.out.println("El artículo ha sido introducido.");
 
-	public static void introducirProducto(String[] productos, int[] precio, Scanner teclado) {
-		int precios = 0;
-		boolean encontrado=false, vacio=false;
-		System.out.println("Dime el nombre del producto que quieras añadir:");
-		String producto = teclado.next();
+                System.out.print("¿Quieres introducir más artículos? (si/no): ");
+                respuesta = sc.nextLine();
+                if (respuesta.equalsIgnoreCase("no")) {
+                    seguir = false;
+                }
+            }
+        }
+    }
 
-		for (int i = 0; i < productos.length; i++) {
-			if (productos[i]==null) {
-				vacio=true;
-			}
-		}
-		if (vacio) {
-			for (int i = 0; i < productos.length && !encontrado; i++) {
-				if (productos[i]==null) {
-					productos[i] = producto;
-					System.out.println("Que precio quieres ponerle al producto?");
-					precios = teclado.nextInt();
-					precio[i] = precios;
-					System.out.println("Producto añadido correctamente en la posicion " + (i + 1));
-					encontrado=true;
-				}
-			}
-		}else {
-			System.out.println("La tienda esta llena");
-		}
-	}
+    // 2. Mostrar productos de la tienda
+    public static void mostrarProductos(String[] aArticulos, double[] aPrecios) {
+        int i;
+        
+        if (estaVacio(aArticulos)) {
+            System.out.println("No hay productos en la tienda.");
+        } else {
+            i = 0;
+            while (i < aArticulos.length) {
+                if (aArticulos[i] != null) {
+                    System.out.println("El precio del artículo " + aArticulos[i] + " es de " + aPrecios[i] + " €");
+                }
+                i++;
+            }
+        }
+    }
 
-	public static void mostrarProductosyPrecios(String[] productos, int[] precio, Scanner teclado) {
-		boolean vacio=true;
-		for (int i = 0; i < productos.length; i++) {
-			if (productos[i]!=null) {
-				vacio = false;
-			}
-		}if(!vacio) {
-			for (int i = 0; i < productos.length; i++) {
-				if (productos[i]!=null) {
-					System.out.println(productos[i] + " tiene un precio de " + precio[i] + "$");
-				}
-			}
-		}else {
-			System.out.println("La tienda esta vacia");
-		}
-	}
+    // 3. Obtener el precio de un producto
+    public static void mostrarPrecio(Scanner sc, String[] aArticulos, double[] aPrecios) {
+        String articulo;
+        int pos;
+        
+        if (estaVacio(aArticulos)) {
+            System.out.println("No hay artículos en la tienda.");
+        } else {
+            System.out.print("¿Cuál es el nombre del artículo?\n ");
+            articulo = sc.nextLine();
+            pos = buscarPos(aArticulos, articulo);
+            
+            if (pos == -1) {
+                System.out.println("El artículo no existe.");
+            } else {
+                System.out.println("El precio del artículo " + aArticulos[pos] + " es de " + aPrecios[pos] + " €");
+            }
+        }
+    }
 
-	public static void mostrarPrecio(String[] productos, int[] precio, Scanner teclado) {
-		boolean vacio=true;
-		for (int i = 0; i < productos.length; i++) {
-			if (productos[i]!=null) {
-				vacio = false;
-			}
-		}if(!vacio) {
-			System.out.println("De que producto quieres saber el precio?");
-			String producto = teclado.next();
-			boolean encontrado = false;
-			for (int i = 0; i < productos.length && !encontrado; i++) {
-				if (productos[i].equalsIgnoreCase(producto)) {
-					System.out.println("El producto: " + productos[i] + " vale: " + precio[i] + "$");
-					encontrado = true;
-				}
-			}
-			if (!encontrado) {
-				System.out.println("Producto no encontrado.");
-			}
-		}else {
-			System.out.println("La tienda esta vacia");
-		}
-	}
+    // 4. Obtener el IVA de un producto (21%)
+    public static void obtenerIva(Scanner sc, String[] aArticulos, double[] aPrecios) {
+        String articulo;
+        int pos;
+        double iva;
+        
+        if (estaVacio(aArticulos)) {
+            System.out.println("No hay artículos en la tienda.");
+        } else {
+            System.out.print("¿Cuál es el nombre del artículo?\n> ");
+            articulo = sc.nextLine();
+            pos = buscarPos(aArticulos, articulo);
+            if (pos == -1) {
+                System.out.println("El artículo no existe.");
+            } else {
+                iva = aPrecios[pos] * 0.21;
+                System.out.println("El IVA del artículo " + aArticulos[pos] + " es " + iva + "€");
+            }
+        }
+    }
 
-	public static void mostrarIva(String[] productos, Scanner teclado) {
-		boolean vacio=true;
-		for (int i = 0; i < productos.length; i++) {
-			if (productos[i]!=null) {
-				vacio = false;
-			}
-		}if(!vacio) {
-			System.out.println("De que producto quieres saber el IVA?");
-			String producto = teclado.next();
-			boolean encontrado = false;
-			for (int i = 0; i < productos.length && !encontrado; i++) {
-				if (productos[i].equalsIgnoreCase(producto)) {
-					System.out.println("El producto: " + productos[i] + " tiene un IVA de 0.21");
-					encontrado = true;
-				}
-			}
-			if (!encontrado) {
-				System.out.println("Producto no encontrado.");
-			}
-		}
-		else {System.out.println("La tienda esta vacia");
-		}
-	}
+    // 5. Modificar el precio de un producto
+    public static void modPrecio(Scanner sc, String[] aArticulos, double[] aPrecios) {
+        String articulo;
+        int pos;
+        double nuevoPrecio;
+        
+        if (estaVacio(aArticulos)) {
+            System.out.println("No hay artículos en la tienda.");
+        } else {
+            System.out.print("¿Cuál es el nombre del artículo?\n> ");
+            articulo = sc.nextLine();
+            pos = buscarPos(aArticulos, articulo);
+            if (pos == -1) {
+                System.out.println("El artículo no existe.");
+            } else {
+                System.out.print("Introduce el nuevo precio del producto:\n> ");
+                nuevoPrecio = sc.nextDouble();
+                sc.nextLine(); // Limpiar el buffer
+                aPrecios[pos] = nuevoPrecio;
+                System.out.println("El precio del " + aArticulos[pos] + " ha sido modificado.");
+            }
+        }
+    }
 
-	public static void cambiarPrecio(String[] productos, int precio[], Scanner teclado) {
-		boolean vacio=true;
-		for (int i = 0; i < productos.length; i++) {
-			if (productos[i]!=null) {
-				vacio = false;
-			}
-		}if(!vacio) {
-			System.out.println("Dime el producto que le quieras cambiar el precio:");
-			int precios = 0;
-			boolean encontrado = false;
-			String producto = teclado.next();
-			for (int i = 0; i < productos.length && !encontrado; i++) {
-				if (producto.equalsIgnoreCase(productos[i])) {
-					System.out.println("Que precio quieres ponerle a " + producto);
-					precios = teclado.nextInt();
-					precio[i] = precios;
-					System.out.println("Precio cambiado con exito");
-					encontrado = true;
-				}
-			}
-			if (!encontrado) {
-				System.out.println("No existe el producto en la tienda");
-			}
-		}
-		else {System.out.println("La tienda esta vacia");
-		}
-	}
+    // 6. Eliminar un producto
+    public static void eliminar(String[] aArticulos, double[] aPrecios, Scanner sc) {
+        String articulo;
+        int pos;
+        String confirmacion;
+        
+        if (estaVacio(aArticulos)) {
+            System.out.println("No hay artículos en la tienda.");
+        } else {
+            System.out.print("¿Cuál es el nombre del artículo que quieres eliminar?\n> ");
+            articulo = sc.nextLine();
+            pos = buscarPos(aArticulos, articulo);
+            if (pos == -1) {
+                System.out.println("El artículo no existe.");
+            } else {
+                System.out.print("¿Estás segur@ de que quieres eliminarlo?\n> ");
+                confirmacion = sc.nextLine();
+                if (confirmacion.equalsIgnoreCase("Si") || confirmacion.equalsIgnoreCase("Sí")) {
+                    aArticulos[pos] = null;
+                    aPrecios[pos] = 0.0;
+                    System.out.println("Producto eliminado correctamente");
+                } else {
+                    System.out.println("Eliminación cancelada.");
+                }
+            }
+        }
+    }
 
-	public static void eliminarProducto(String[] productos, int[] precio, Scanner teclado) {
-		boolean vacio=true;
-		for (int i = 0; i < productos.length; i++) {
-			if (productos[i]!=null) {
-				vacio = false;
-			}
-		}if(!vacio) {
-			String producto;
-			boolean encontrado = false;
-			System.out.println("Dime el nombre del producto que quieres eliminar:");
-			producto = teclado.next();
-			for (int i = 0; i < productos.length&&!encontrado; i++) {
-				if (producto.equalsIgnoreCase(productos[i])) {
-					productos[i] = null;
-					precio[i]=0;
-					System.out.println("Producto eliminada");
-					encontrado = true;
-				}
-			}
-			if (!encontrado) {
-				System.out.println("No existe el producto");
-			}
-		}
-		else {System.out.println("La tienda esta vacia");
-		}
+    // 7. Salir del programa
+    public static void salir() {
+        System.out.println("Saliendo del programa. ¡Hasta pronto!");
+    }
 
-	}
+// Método principal MAIN------------------------------------------------------------------------------
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String[] aArticulos = new String[50];
+        double[] aPrecios = new double[50];
+        int opcion = 0;
 
+        do {
+            System.out.println("***********************************************");
+            System.out.println("1.- Añadir artículos y precios");
+            System.out.println("2.- Mostrar productos de la tienda");
+            System.out.println("3.- Obtener el precio de un producto");
+            System.out.println("4.- Obtener el IVA de un producto");
+            System.out.println("5.- Modificar el precio de un producto");
+            System.out.println("6.- Eliminar un producto");
+            System.out.println("7.- Salir");
+            System.out.println("¿Qué quieres hacer?");
+
+            opcion = sc.nextInt();
+            sc.nextLine(); //limpiar el buffer
+
+            switch (opcion) {
+                case 1:
+                    introducirProPre(aArticulos, aPrecios, sc);
+                    break;
+                case 2:
+                    mostrarProductos(aArticulos, aPrecios);
+                    break;
+                case 3:
+                    mostrarPrecio(sc, aArticulos, aPrecios);
+                    break;
+                case 4:
+                    obtenerIva(sc, aArticulos, aPrecios);
+                    break;
+                case 5:
+                    modPrecio(sc, aArticulos, aPrecios);
+                    break;
+                case 6:
+                    eliminar(aArticulos, aPrecios, sc);
+                    break;
+                case 7:
+                    salir();
+                    break;
+                default:
+                    System.out.println("Opción no válida, inténtalo de nuevo.");
+            }
+        } while (opcion != 7);
+
+        sc.close();
+    }
 }

@@ -20,6 +20,7 @@ public class ArrayString {
     
     //mostrar la lista de nombres
     public static void mostrar(String [] aNombres) {
+    	
         System.out.println("NOMBRES:");
         for(int i = 0; i < aNombres.length; i++) {
             System.out.println("Posición " + i + ": " + aNombres[i]);
@@ -28,9 +29,11 @@ public class ArrayString {
     
     //contar nombres
     public static void pedir(String [] aNombres, Scanner sc) {
-        System.out.print("Introduce un nombre a buscar: ");
-        String nombre = sc.next();
-        int nVeces = 0;
+    	String nombre;
+    	int nVeces = 0;
+        
+    	System.out.print("Introduce un nombre a buscar: ");
+        nombre = sc.next();
         
         for(int i = 0; i < aNombres.length; i++) {
             if (aNombres[i] != null && aNombres[i].equalsIgnoreCase(nombre)) {
@@ -46,9 +49,11 @@ public class ArrayString {
     
     //existe?
     public static void existe(String [] aNombres, Scanner sc) {
-        System.out.print("Introduce un nombre para comprobar si existe: ");
-        String nombre = sc.next();
-        boolean encontrado = false;
+    	 String nombre;
+         boolean encontrado = false;
+         
+    	System.out.print("Introduce un nombre para comprobar si existe: ");
+        nombre = sc.next();
         
         for(int i = 0; i < aNombres.length; i++){
             if (aNombres[i] != null && aNombres[i].equalsIgnoreCase(nombre)) {
@@ -65,11 +70,13 @@ public class ArrayString {
 
     //elegir nombre que queremos eliminar
     public static void eliminar(String [] aNombres, Scanner sc) {
-        System.out.println("Introduce el nombre que deseas eliminar: ");
-        mostrar(aNombres);
-        String nombre = sc.next();
+    	String nombre;
         boolean eliminado = false;
-      
+    	
+    	System.out.println("Introduce el nombre que deseas eliminar: ");
+        mostrar(aNombres);
+        nombre = sc.next();
+        
         for(int i = 0; i < aNombres.length; i++) {
             if (!eliminado && aNombres[i] != null && aNombres[i].equalsIgnoreCase(nombre)) {
                 aNombres[i] = "null";

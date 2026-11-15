@@ -30,86 +30,78 @@ import java.util.Scanner;
 
 public class Ej5PrincipalGestionCuentas {
 
-    //10 salir del programa
+    //10 salir
     public static void salir() {
         System.out.println("Saliendo del programa. Hasta pronto :-)");
     }
 
-    //comprobar si hay cuentas
-    public static boolean hayCuentas(Ej1Cuenta[] aCuentas) {
-        boolean tenemosCuentas = false;
-
-        for (int i = 0; i < aCuentas.length; i++) {
-            if (aCuentas[i] != null) {
-                tenemosCuentas = true;
-            }
-        }
-        return tenemosCuentas;
-    }
-
     //1 introducir cuentas
     public static void introducirCuentas(Ej1Cuenta[] aCuentas, Scanner sc) {
-        int posLibres = 0; //elementos libres en el array (null)
-        int num; //numero de cuentas nuevas introducidas x usuario
-        int introducidas; //contador de nuevas cuentas
-        String titular;
-        double cantidad;
+        int libres = 0;
 
-        //comprobar cuantas cuentas estan libres
         for (int i = 0; i < aCuentas.length; i++) {
             if (aCuentas[i] == null) {
-                posLibres++;
+                libres++;
             }
         }
-        
-        //si no hay no hace nada, si hay introducimos numero de cuentas nuevas
-        if (posLibres == 0) {
+
+        if (libres == 0) {
             System.out.println("No hay espacio para más cuentas.");
         } else {
             System.out.println("¿Cuántas cuentas quieres introducir?");
-            num = sc.nextInt();
-            //validacion de num
+            int num = sc.nextInt();
+
             if (num <= 0) {
-                System.out.println("Introduce al menos una cuenta.");
-            } else if (num > posLibres) {
-                System.out.println("Solo puedes introducir " + posLibres + " cuentas.");
+                System.out.println("Debes introducir al menos una cuenta.");
+            } else if (num > libres) {
+                System.out.println("Solo puedes introducir " + libres + " cuentas.");
             } else {
-                //insertar las cuentas en las posiciones libres
-                for (i = 0; i < aCuentas.length && introducidas < num; i++) {
-                    if (aCuentas[i] == null) {
+                int introducidas = 0;
+
+                for (int i = 0; i < aCuentas.length; i++) {
+                    if (aCuentas[i] == null && introducidas < num) {
                         System.out.println("Introduce el titular de la cuenta:");
-                        titular = sc.next();
+                        String titular = sc.next();
 
                         System.out.println("Introduce la cantidad:");
-                        cantidad = sc.nextDouble();
-                        while (cantidad < 0) {
-                            System.out.println("ERROR. Introduce una cantidad válida:");
-                            cantidad = sc.nextDouble();
-                        }
+                        double cantidad = sc.nextDouble();
 
-                        aCuentas[i] = new Ej1Cuenta(titular); //elemento del array -> nuevo objeto clase persona
-                        aCuentas[i].setCantidad(cantidad); //definimos el valor del atributo cantidad del objeto nuevo
+                        aCuentas[i] = new Ej1Cuenta(titular);
+                        aCuentas[i].setCantidad(cantidad);
 
                         introducidas++;
                     }
                 }
+
                 System.out.println("Cuentas introducidas correctamente.");
             }
         }
     }
 
-   
+    //comprobar si hay cuentas
+    public static boolean hayCuentas(Ej1Cuenta[] aCuentas) {
+        boolean hay = false;
+
+        for (int i = 0; i < aCuentas.length; i++) {
+            if (aCuentas[i] != null) {
+                hay = true;
+            }
+        }
+        return hay;
+    }
+
     //2 mostrar todas las cuentas
     public static void mostrarCuentas(Ej1Cuenta[] aCuentas) {
         boolean vacio = true;
 
         for (int i = 0; i < aCuentas.length; i++) {
             if (aCuentas[i] != null) {
-                System.out.println("-------------Cuenta " + (i + 1) + "-------------");
+                System.out.println("--- Cuenta " + (i + 1) + " ---");
                 System.out.println(aCuentas[i]);
                 vacio = false;
             }
         }
+
         if (vacio) {
             System.out.println("No hay cuentas introducidas.");
         }
@@ -117,18 +109,16 @@ public class Ej5PrincipalGestionCuentas {
 
     //3 ingresar una cantidad
     public static void ingresarCuenta(Ej1Cuenta[] aCuentas, Scanner sc) {
-        boolean encontrado = false;
-        String titularBuscado;
-        double cantidad;
-        
         System.out.println("Introduce el titular de la cuenta:");
-        titularBuscado = sc.next();
-        
+        String titularBuscado = sc.next();
+
+        boolean encontrado = false;
+
         for (int i = 0; i < aCuentas.length; i++) {
             if (aCuentas[i] != null) {
                 if (aCuentas[i].getTitular().equalsIgnoreCase(titularBuscado)) {
-                    System.out.println("Introduce la cantidad a ingresar:");
-                    cantidad = sc.nextDouble();
+                    System.out.println("Introduce la cantidad que quieres ingresar:");
+                    double cantidad = sc.nextDouble();
 
                     aCuentas[i].ingresarCant(cantidad);
 
@@ -139,18 +129,20 @@ public class Ej5PrincipalGestionCuentas {
                 }
             }
         }
+
         if (!encontrado) {
             System.out.println("No existe ninguna cuenta con ese titular.");
         }
     }
 
-    //4 retirar la comisión de 12 € con el metodo del ejercicio 1
+    //4 retirar la comisión de 12 €
     public static void cobrarComision(Ej1Cuenta[] aCuentas) {
         for (int i = 0; i < aCuentas.length; i++) {
             if (aCuentas[i] != null) {
                 aCuentas[i].retirar(12);
             }
         }
+
         System.out.println("Se ha cobrado la comisión de 12 euros.");
     }
 
@@ -163,7 +155,8 @@ public class Ej5PrincipalGestionCuentas {
                 if (posicionMayor == -1) {
                     posicionMayor = i;
                 } else {
-                    if (aCuentas[i].getCantidad() > aCuentas[posicionMayor].getCantidad()) {
+                    if (aCuentas[i].getCantidad()
+                            > aCuentas[posicionMayor].getCantidad()) {
                         posicionMayor = i;
                     }
                 }
@@ -180,12 +173,10 @@ public class Ej5PrincipalGestionCuentas {
 
     //6 mostrar cuentas con saldo superior a una cantidad
     public static void cuentasPorSaldo(Ej1Cuenta[] aCuentas, Scanner sc) {
-        double saldoMinimo;
-        boolean encontrado;
-        
         System.out.println("Introduce el saldo mínimo:");
-        saldoMinimo = sc.nextDouble();
-        encontrado = false;
+        double saldoMinimo = sc.nextDouble();
+
+        boolean encontrado = false;
 
         for (int i = 0; i < aCuentas.length; i++) {
             if (aCuentas[i] != null) {
@@ -203,13 +194,10 @@ public class Ej5PrincipalGestionCuentas {
 
     //7 mostrar la cuenta de un titular concreto
     public static void buscarTitular(Ej1Cuenta[] aCuentas, Scanner sc) {
-        String titularBuscado;
-        boolean encontrado;
-        
         System.out.println("Introduce el titular que quieres buscar:");
-        titularBuscado = sc.next();
+        String titularBuscado = sc.next();
 
-        encontrado = false;
+        boolean encontrado = false;
 
         for (int i = 0; i < aCuentas.length; i++) {
             if (aCuentas[i] != null) {
@@ -227,13 +215,10 @@ public class Ej5PrincipalGestionCuentas {
 
     //8 buscar titulares que contengan un grupo de letras
     public static void buscarPorLetras(Ej1Cuenta[] aCuentas, Scanner sc) {
-        String letras;
-        boolean encontrado;
-        
         System.out.println("Introduce las letras que quieres buscar:");
-        letras = sc.next();
+        String letras = sc.next();
 
-        encontrado = false;
+        boolean encontrado = false;
 
         for (int i = 0; i < aCuentas.length; i++) {
             if (aCuentas[i] != null) {
@@ -249,24 +234,24 @@ public class Ej5PrincipalGestionCuentas {
         }
     }
 
-    //9 ordenar las cuentas de mayor a menor saldo (método de la burbúja)
+    //9 ordenar las cuentas de mayor a menor saldo
     public static void ordenarCuentas(Ej1Cuenta[] aCuentas) {
-        Ej1Cuenta temporal;
+        Ej1Cuenta auxiliar;
 
         for (int i = 0; i < aCuentas.length - 1; i++) {
             for (int j = 0; j < aCuentas.length - 1 - i; j++) {
                 if (aCuentas[j] == null) {
                     if (aCuentas[j + 1] != null) {
-                        temporal = aCuentas[j];
+                        auxiliar = aCuentas[j];
                         aCuentas[j] = aCuentas[j + 1];
-                        aCuentas[j + 1] = temporal;
+                        aCuentas[j + 1] = auxiliar;
                     }
                 } else if (aCuentas[j + 1] != null) {
                     if (aCuentas[j].getCantidad()
                             < aCuentas[j + 1].getCantidad()) {
-                        temporal = aCuentas[j];
+                        auxiliar = aCuentas[j];
                         aCuentas[j] = aCuentas[j + 1];
-                        aCuentas[j + 1] = temporal;
+                        aCuentas[j + 1] = auxiliar;
                     }
                 }
             }

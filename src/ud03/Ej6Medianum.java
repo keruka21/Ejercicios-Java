@@ -47,7 +47,7 @@ public class Ej6Medianum {
             System.out.println("----------------------------------------");
             System.out.println("Cantidad de números introducidos: " + posOcupadas);
             System.out.println("La suma total es: " + suma);
-            System.out.println("La media es:"+ media);
+            System.out.println("La media es: "+ media);
         } else {
             System.out.println("No se introdujo ningún número válido para calcular la media.");
         }
