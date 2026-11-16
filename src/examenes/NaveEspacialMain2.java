@@ -111,10 +111,9 @@ public class NaveEspacialMain2 {
 	 Devuelve ese número. Es la forma de saber cuántas naves hay registradas sin usar un contador externo.*/
     public static int contarNaves(NaveEspacial[] naves) {
         int total;
-        int i;
 
         total = 0;
-        for (i = 0; i < naves.length; i++) {
+        for (int i = 0; i < naves.length; i++) {
             if (naves[i] != null) {
                 total++;
             }
@@ -155,24 +154,21 @@ public class NaveEspacialMain2 {
      *Crea el objeto NaveEspacial y lo guarda en la primera posición libre.
      *Pregunta si quieres seguir añadiendo.*/
     
-    public static void anadirNaves(NaveEspacial[] naves, Scanner sc) {
-        boolean seguirAñadiendo;
-        String nombre;
+    public static void anadirNaves(NaveEspacial[] aNaves, Scanner sc) {
+        boolean seguirAñadiendo = true;
+        String nombre; 
         int anioCreacion;
-        int anioLanzamiento;
-        boolean anioValido;
+        int anioLanzamiento = 0;
+        boolean anioValido = false;
         int capacidadTotal;
         int tripulantesNecesarios;
         String respuesta;
         int indice;
         int totalNaves;
 
-        seguirAñadiendo = true;
-        anioLanzamiento = 0;
-        anioValido = false;
 
         while (seguirAñadiendo) {
-            totalNaves = contarNaves(naves);
+            totalNaves = contarNaves(aNaves);
 
             if (totalNaves >= 50) {
                 System.out.println("Error: Se ha alcanzado el límite máximo de 50 naves.");
@@ -181,7 +177,7 @@ public class NaveEspacialMain2 {
                 System.out.print("Introduce el nombre de la nave: ");
                 nombre = sc.nextLine();
 
-                indice = buscarNave(naves, nombre);
+                indice = buscarNave(aNaves, nombre);
                 if (indice != -1) {
                     System.out.println("Ya existe una nave con ese nombre.");
                 } else {
@@ -206,7 +202,7 @@ public class NaveEspacialMain2 {
                     tripulantesNecesarios = sc.nextInt();
                     sc.nextLine();
 
-                    naves[totalNaves] = new NaveEspacial(nombre, anioCreacion, anioLanzamiento, capacidadTotal, tripulantesNecesarios);
+                    aNaves[totalNaves] = new NaveEspacial(nombre, anioCreacion, anioLanzamiento, capacidadTotal, tripulantesNecesarios);
                     System.out.println("Nave añadida exitosamente.");
                 }
 
@@ -220,9 +216,10 @@ public class NaveEspacialMain2 {
     }
 
 // 2 Mostrar naves cuya antigüedad sea superior o igual a una introducida
-    /*Pide un número (antigüedad mínima). Recorre las naves y muestra solo las cuya antigüedad (año actual − año de lanzamiento) sea ≥ al número introducido.
+    /*Pide un número (antigüedad mínima). Recorre las naves y muestra solo las cuya antigüedad
+     (año actual − año de lanzamiento) sea ≥ al número introducido.
       Si no hay ninguna que cumpla, lo indica.*/
-    public static void mostrarNavesAntiguedad(NaveEspacial[] naves, Scanner sc) {
+    public static void mostrarNavesAntiguedad(NaveEspacial[] aNaves, Scanner sc) {
         int totalNaves;
         int antiguedadMinima;
         int anioActual;
@@ -230,7 +227,7 @@ public class NaveEspacialMain2 {
         int i;
         int antiguedadNave;
 
-        totalNaves = contarNaves(naves);
+        totalNaves = contarNaves(aNaves);
 
         if (totalNaves == 0) {
             System.out.println("Error: No hay naves registradas en el sistema.");
@@ -245,9 +242,9 @@ public class NaveEspacialMain2 {
         sc.nextLine();
 
         for (i = 0; i < totalNaves; i++) {
-            antiguedadNave = naves[i].calcularAntiguedad(anioActual);
+            antiguedadNave = aNaves[i].calcularAntiguedad(anioActual);
             if (antiguedadNave >= antiguedadMinima) {
-                System.out.println(naves[i].toString());
+                System.out.println(aNaves[i].toString());
                 encontradas++;
             }
         }
@@ -261,14 +258,14 @@ public class NaveEspacialMain2 {
     /*Ordena las naves por año de lanzamiento en orden descendente (la más reciente primero)
      usando el algoritmo de burbuja (comparación de vecinos e intercambio).
      Al terminar, imprime la lista ordenada.*/
-    public static void ordenarNavesPorAnio(NaveEspacial[] naves) {
+    public static void ordenarNavesPorAnio(NaveEspacial[] aNaves) {
         int totalNaves;
         int i;
         int j;
         int k;
         NaveEspacial auxiliar;
 
-        totalNaves = contarNaves(naves);
+        totalNaves = contarNaves(aNaves);
 
         if (totalNaves == 0) {
             System.out.println("Error: No hay naves registradas en el sistema.");
@@ -277,17 +274,17 @@ public class NaveEspacialMain2 {
 
         for (i = 0; i < totalNaves - 1; i++) {
             for (j = 0; j < totalNaves - i - 1; j++) {
-                if (naves[j].getAnioLanzamiento() < naves[j + 1].getAnioLanzamiento()) {
-                    auxiliar = naves[j];
-                    naves[j] = naves[j + 1];
-                    naves[j + 1] = auxiliar;
+                if (aNaves[j].getAnioLanzamiento() < aNaves[j + 1].getAnioLanzamiento()) {
+                    auxiliar = aNaves[j];
+                    aNaves[j] = aNaves[j + 1];
+                    aNaves[j + 1] = auxiliar;
                 }
             }
         }
 
         System.out.println("Naves ordenadas por año de lanzamiento (descendente):");
         for (k = 0; k < totalNaves; k++) {
-            System.out.println(naves[k].toString());
+            System.out.println(aNaves[k].toString());
         }
     }
 
@@ -300,7 +297,7 @@ public class NaveEspacialMain2 {
      * Si es válida, actualiza con setCapacidadTotal.
      * Si no hay ninguna nave que admita pasajeros, lo indica.*/
     
-    public static void modificarCapacidadPasajeros(NaveEspacial[] naves, Scanner sc) {
+    public static void modificarCapacidadPasajeros(NaveEspacial[] aNaves, Scanner sc) {
         int totalNaves;
         int navesPasajeros;
         int i;
@@ -308,7 +305,7 @@ public class NaveEspacialMain2 {
         boolean capacidadValida;
         int nuevaCapacidad;
 
-        totalNaves = contarNaves(naves);
+        totalNaves = contarNaves(aNaves);
 
         if (totalNaves == 0) {
             System.out.println("Error: No hay naves registradas en el sistema.");
@@ -318,23 +315,23 @@ public class NaveEspacialMain2 {
         navesPasajeros = 0;
 
         for (i = 0; i < totalNaves; i++) {
-            if (naves[i].admitePasajeros()) {
+            if (aNaves[i].admitePasajeros()) {
                 navesPasajeros++;
-                System.out.println(naves[i].toString());
+                System.out.println(aNaves[i].toString());
                 System.out.print("¿Desea cambiar la capacidad total de la nave? (si/no): ");
                 respuesta = sc.nextLine();
 
                 if (respuesta.equalsIgnoreCase("si")) {
                     capacidadValida = false;
                     while (!capacidadValida) {
-                        System.out.print("Introduce la nueva capacidad para la nave " + naves[i].getNombre() + ": ");
+                        System.out.print("Introduce la nueva capacidad para la nave " + aNaves[i].getNombre() + ": ");
                         nuevaCapacidad = sc.nextInt();
                         sc.nextLine();
 
-                        if (nuevaCapacidad < naves[i].getTripulantesNecesarios()) {
+                        if (nuevaCapacidad < aNaves[i].getTripulantesNecesarios()) {
                             System.out.println("Error: La nueva capacidad no puede ser menor que el número de tripulantes necesarios.");
                         } else {
-                            naves[i].setCapacidadTotal(nuevaCapacidad);
+                            aNaves[i].setCapacidadTotal(nuevaCapacidad);
                             System.out.println("Capacidad actualizada correctamente.");
                             capacidadValida = true;
                         }
@@ -350,11 +347,11 @@ public class NaveEspacialMain2 {
 
 // 5 Mostrar todas las naves espaciales registradas
     /*Recorre todas las naves registradas y las imprime con toString()*/
-    public static void mostrarTodasLasNaves(NaveEspacial[] naves) {
+    public static void mostrarTodasLasNaves(NaveEspacial[] aNaves) {
         int totalNaves;
         int i;
 
-        totalNaves = contarNaves(naves);
+        totalNaves = contarNaves(aNaves);
 
         if (totalNaves == 0) {
             System.out.println("Error: No hay naves registradas en el sistema.");
@@ -362,7 +359,7 @@ public class NaveEspacialMain2 {
         }
 
         for (i = 0; i < totalNaves; i++) {
-            System.out.println(naves[i].toString());
+            System.out.println(aNaves[i].toString());
         }
     }
 
@@ -373,13 +370,13 @@ public class NaveEspacialMain2 {
      * Si existe, desplaza todas las naves que están a su derecha una posición hacia la izquierda
      * (compactación) y pone null en la última posición.*/
     
-    public static void eliminarNave(NaveEspacial[] naves, Scanner scanner) {
+    public static void eliminarNave(NaveEspacial[] aNaves, Scanner scanner) {
         int totalNaves;
         String nombreBorrar;
         int indiceEncontrado;
         int j;
 
-        totalNaves = contarNaves(naves);
+        totalNaves = contarNaves(aNaves);
 
         if (totalNaves == 0) {
             System.out.println("Error: No hay naves registradas en el sistema.");
@@ -389,27 +386,24 @@ public class NaveEspacialMain2 {
         System.out.print("Introduce el nombre de la nave que deseas eliminar: ");
         nombreBorrar = scanner.nextLine();
 
-        indiceEncontrado = buscarNave(naves, nombreBorrar);
+        indiceEncontrado = buscarNave(aNaves, nombreBorrar);
 
         if (indiceEncontrado == -1) {
             System.out.println("No se encontró ninguna nave con ese nombre.");
         } else {
             for (j = indiceEncontrado; j < totalNaves - 1; j++) {
-                naves[j] = naves[j + 1];
+                aNaves[j] = aNaves[j + 1];
             }
-            naves[totalNaves - 1] = null;
+            aNaves[totalNaves - 1] = null;
             System.out.println("Nave eliminada correctamente.");
         }
     }
 
 // MAIN-------------------------------------------------------------------------------------------------------------------------
     public static void main(String[] args) {
-        Scanner sc;
-        NaveEspacial[] naves;
+        Scanner sc = new Scanner(System.in);
+        NaveEspacial[] aNaves = new NaveEspacial[50];
         int opcion;
-
-        sc = new Scanner(System.in);
-        naves = new NaveEspacial[50];
 
         do {
             System.out.println("\n----- MENÚ DE MISIÓN ESPACIAL -----");
@@ -427,22 +421,22 @@ public class NaveEspacialMain2 {
 
             switch (opcion) {
                 case 1:
-                    anadirNaves(naves, sc);
+                    anadirNaves(aNaves, sc);
                     break;
                 case 2:
-                    mostrarNavesAntiguedad(naves, sc);
+                    mostrarNavesAntiguedad(aNaves, sc);
                     break;
                 case 3:
-                    ordenarNavesPorAnio(naves);
+                    ordenarNavesPorAnio(aNaves);
                     break;
                 case 4:
-                    modificarCapacidadPasajeros(naves, sc);
+                    modificarCapacidadPasajeros(aNaves, sc);
                     break;
                 case 5:
-                    mostrarTodasLasNaves(naves);
+                    mostrarTodasLasNaves(aNaves);
                     break;
                 case 6:
-                    eliminarNave(naves, sc);
+                    eliminarNave(aNaves, sc);
                     break;
                 case 7:
                     System.out.println("¡Hasta pronto :-)! Finalizando el programa de exploración espacial.");

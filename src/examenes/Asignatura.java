@@ -22,7 +22,7 @@ public class Asignatura {
     private int numeroAlumnos;
     private int numeroSuspensos;
 
-    //Constructor con los campos obligatorios (nombre y curso)
+    // Constructor con los campos obligatorios (nombre y curso)
     public Asignatura(String nombre, String curso) {
         this.nombre = nombre;
         this.curso = curso;
@@ -30,7 +30,7 @@ public class Asignatura {
         this.numeroSuspensos = 0;
     }
 
-    //Constructor con todos los campos (obligatorios y opcionales)
+    // Constructor con todos los campos (obligatorios y opcionales)
     public Asignatura(String nombre, String curso, int numeroAlumnos, int numeroSuspensos) {
         this.nombre = nombre;
         this.curso = curso;
@@ -38,7 +38,7 @@ public class Asignatura {
         this.numeroSuspensos = numeroSuspensos;
     }
 
-    //Métodos GET
+    // Métodos GET
     public String getNombre() {
         return this.nombre;
     }
@@ -55,7 +55,7 @@ public class Asignatura {
         return this.numeroSuspensos;
     }
 
-    //Métodos SET
+    // Métodos SET
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -72,7 +72,7 @@ public class Asignatura {
         this.numeroSuspensos = numeroSuspensos;
     }
 
-    //Métodos especiales
+    // MÉTODOS
 
     // Devuelve el número total de aprobados (total alumnos - suspensos)
     public int obtenerNumeroAprobados() {
@@ -87,6 +87,12 @@ public class Asignatura {
     }
 
     // Devuelve el porcentaje de alumnado aprobado (con decimales)
+    /*recordatorio: En Java, si uno de los números de una operación tiene decimales, el resultado de esa operación se convierte automáticamente a double.
+     * Al multiplicar primero aprobados * 100.0, obtienes un número con decimales antes de dividir entre this.numeroAlumnos,
+     * evitando así que Java trunque los decimales
+     Como aprobados y numero de alumnos son int, su división(porcentaje) no tendría decimales,
+     pero multiplicando * 100.0 primero si*/
+    
     public double porcentajeAprobados() {
         double porcentaje;
         int aprobados;
@@ -95,13 +101,13 @@ public class Asignatura {
         if (this.numeroAlumnos <= 0) {
             porcentaje = 0.0;
         } else {
-            porcentaje = ((double) aprobados / this.numeroAlumnos) * 100.0;
+            porcentaje = (aprobados * 100.0) / this.numeroAlumnos;
         }
 
         return porcentaje;
     }
 
-    //Método toString
+    // Método toString
     @Override
     public String toString() {
         return "Asignatura [Nombre=" + this.nombre + 

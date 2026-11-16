@@ -105,26 +105,23 @@ public class AsignaturaMain {
 
 // MÉTODOS DE LAS OPCIONES DEL MENÚ
 
-    // 1. Introducir las asignaturas (controlado mediante variable booleana, sin usar break)
+    // 1. Introducir las asignaturas
     public static void introducirAsignaturas(Asignatura[] aAsignaturas, Scanner sc) {
-        String respuesta;
+        String respuesta = "SI";;
         String nombre;
         int indiceExistente;
         String curso;
         int matriculados;
         int suspensos;
         int totalAsignaturas;
-        boolean continuar;
-
-        respuesta = "SI";
-        continuar = true;
+        boolean continuar = true;;
 
         while (respuesta.equalsIgnoreCase("SI") && continuar) {
             totalAsignaturas = contarAsignaturas(aAsignaturas);
 
             if (totalAsignaturas >= 100) {
                 System.out.println("Se ha alcanzado el límite máximo de 100 asignaturas.");
-                continuar = false; // Variable centinela para salir del bucle ordenadamente sin break
+                continuar = false; // Variablepara salir del bucle 
             } else {
                 System.out.print("Introduce el nombre de la asignatura: ");
                 nombre = sc.nextLine().trim();
